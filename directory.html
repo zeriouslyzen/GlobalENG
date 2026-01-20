@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory | Global Citizens Engineers</title>
+    <meta name="description"
+        content="Explore the network of small businesses, freelancers, and makers building together.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">Global Citizens</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="manifesto.html">Manifesto</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="connect.html">Connect</a></li>
+                <li><a href="connect.html" class="nav-cta">Join the Network</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="section" style="padding-top: 140px; padding-bottom: var(--space-8);">
+        <div class="container">
+            <span class="eyebrow fade-in">The Network</span>
+            <h1 style="margin-top: var(--space-4); margin-bottom: var(--space-6);" class="fade-in fade-in-delay-1">
+                Member Directory
+            </h1>
+            <p class="lead fade-in fade-in-delay-2" style="max-width: 600px;">
+                Every person here is real. Every business is verified. This is a living database
+                of people who build, create, and support each other.
+            </p>
+        </div>
+    </section>
+
+    <!-- Search & Filter -->
+    <section class="section-sm"
+        style="background: var(--paper-warm); border-top: 1px solid var(--tan-medium); border-bottom: 1px solid var(--tan-medium);">
+        <div class="container">
+            <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center;">
+                <div style="flex: 1; min-width: 280px;">
+                    <input type="text" id="searchInput" class="form-input search-input"
+                        placeholder="Search members by name, skill, or location..." autocomplete="off">
+                </div>
+
+                <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+                    <select class="form-select" id="filterIndustry" style="width: auto; min-width: 150px;">
+                        <option value="">All Industries</option>
+                        <option value="technology">Technology</option>
+                        <option value="design">Design</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="legal">Legal</option>
+                        <option value="creative">Creative</option>
+                        <option value="finance">Finance</option>
+                        <option value="education">Education</option>
+                    </select>
+
+                    <select class="form-select" id="filterLocation" style="width: auto; min-width: 150px;">
+                        <option value="">All Locations</option>
+                        <option value="remote">Remote/Global</option>
+                        <option value="west">West Coast</option>
+                        <option value="east">East Coast</option>
+                        <option value="midwest">Midwest</option>
+                        <option value="south">South</option>
+                        <option value="international">International</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="margin-top: var(--space-4); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                <span class="tag" style="cursor: pointer;" onclick="filterByTag('web-development')">Web
+                    Development</span>
+                <span class="tag" style="cursor: pointer;" onclick="filterByTag('branding')">Branding</span>
+                <span class="tag" style="cursor: pointer;" onclick="filterByTag('legal')">Legal</span>
+                <span class="tag" style="cursor: pointer;" onclick="filterByTag('open-source')">Open Source</span>
+                <span class="tag" style="cursor: pointer;" onclick="filterByTag('small-business')">Small Business</span>
+                <span class="tag" style="cursor: pointer;" onclick="filterByTag('ai')">AI & Automation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Member Grid -->
+    <section class="section">
+        <div class="container">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-8);">
+                <p style="color: var(--text-secondary); margin: 0;">
+                    Showing <strong id="memberCount">12</strong> members
+                </p>
+                <div style="display: flex; gap: var(--space-2);">
+                    <button class="btn btn-ghost" style="padding: var(--space-2);" title="Grid view">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                        </svg>
+                    </button>
+                    <button class="btn btn-ghost" style="padding: var(--space-2);" title="List view">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="8" y1="6" x2="21" y2="6" />
+                            <line x1="8" y1="12" x2="21" y2="12" />
+                            <line x1="8" y1="18" x2="21" y2="18" />
+                            <line x1="3" y1="6" x2="3.01" y2="6" />
+                            <line x1="3" y1="12" x2="3.01" y2="12" />
+                            <line x1="3" y1="18" x2="3.01" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="member-grid" id="memberGrid">
+                <!-- Member 1 -->
+                <article class="card member-card">
+                    <div class="member-avatar">ML</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Maya Lin</h4>
+                        <p class="member-role">Full-Stack Developer & Consultant</p>
+                        <div class="member-tags">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Open Source</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 2 -->
+                <article class="card member-card">
+                    <div class="member-avatar">JR</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Jordan Rivera</h4>
+                        <p class="member-role">Contract Law Specialist</p>
+                        <div class="member-tags">
+                            <span class="tag">Legal</span>
+                            <span class="tag">Small Business</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 3 -->
+                <article class="card member-card">
+                    <div class="member-avatar">SK</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Sarah Kim</h4>
+                        <p class="member-role">Brand Strategist & Designer</p>
+                        <div class="member-tags">
+                            <span class="tag">Branding</span>
+                            <span class="tag">Design</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 4 -->
+                <article class="card member-card">
+                    <div class="member-avatar">AD</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Alex Dubois</h4>
+                        <p class="member-role">AI & Automation Engineer</p>
+                        <div class="member-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">Technology</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 5 -->
+                <article class="card member-card">
+                    <div class="member-avatar">TW</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Taylor Washington</h4>
+                        <p class="member-role">Business Coach & Strategist</p>
+                        <div class="member-tags">
+                            <span class="tag">Consulting</span>
+                            <span class="tag">Small Business</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 6 -->
+                <article class="card member-card">
+                    <div class="member-avatar">EM</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Elena Martinez</h4>
+                        <p class="member-role">UX Researcher & Strategist</p>
+                        <div class="member-tags">
+                            <span class="tag">Design</span>
+                            <span class="tag">Research</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 7 -->
+                <article class="card member-card">
+                    <div class="member-avatar">NK</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Nathan Kowalski</h4>
+                        <p class="member-role">Maker & Hardware Engineer</p>
+                        <div class="member-tags">
+                            <span class="tag">Manufacturing</span>
+                            <span class="tag">Open Source</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 8 -->
+                <article class="card member-card">
+                    <div class="member-avatar">OP</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Olivia Patel</h4>
+                        <p class="member-role">Financial Advisor</p>
+                        <div class="member-tags">
+                            <span class="tag">Finance</span>
+                            <span class="tag">Small Business</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 9 -->
+                <article class="card member-card">
+                    <div class="member-avatar">CB</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Chris Bennett</h4>
+                        <p class="member-role">Tech Educator & Writer</p>
+                        <div class="member-tags">
+                            <span class="tag">Education</span>
+                            <span class="tag">Technology</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 10 -->
+                <article class="card member-card">
+                    <div class="member-avatar">RA</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Rosa Alvarado</h4>
+                        <p class="member-role">Photographer & Visual Artist</p>
+                        <div class="member-tags">
+                            <span class="tag">Creative</span>
+                            <span class="tag">Branding</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 11 -->
+                <article class="card member-card">
+                    <div class="member-avatar">DT</div>
+                    <div class="member-info">
+                        <h4 class="member-name">David Thompson</h4>
+                        <p class="member-role">Cybersecurity Consultant</p>
+                        <div class="member-tags">
+                            <span class="tag">Technology</span>
+                            <span class="tag">Consulting</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+
+                <!-- Member 12 -->
+                <article class="card member-card">
+                    <div class="member-avatar">LN</div>
+                    <div class="member-info">
+                        <h4 class="member-name">Lisa Nguyen</h4>
+                        <p class="member-role">E-commerce & Marketing</p>
+                        <div class="member-tags">
+                            <span class="tag">Small Business</span>
+                            <span class="tag">Marketing</span>
+                        </div>
+                        <a href="#" class="btn btn-ghost" style="margin-top: var(--space-3); padding-left: 0;">Connect
+                            →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More -->
+            <div style="text-align: center; margin-top: var(--space-12);">
+                <button class="btn btn-secondary btn-lg">Load More Members</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join CTA -->
+    <section class="section" style="background: var(--paper-warm);">
+        <div class="container text-center">
+            <h3 style="margin-bottom: var(--space-4);">Add Yourself to the Directory</h3>
+            <p class="lead" style="max-width: 500px; margin: 0 auto var(--space-6);">
+                Real people. Real skills. Real connections. Join the network.
+            </p>
+            <a href="connect.html" class="btn btn-primary btn-lg">Request to Join</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Global Citizens Engineers</div>
+                    <p class="footer-about">
+                        Building collective intelligence, one connection at a time.
+                        Real people engineering real solutions, together.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="footer-heading">Platform</h5>
+                    <ul class="footer-links">
+                        <li><a href="manifesto.html">Manifesto</a></li>
+                        <li><a href="directory.html">Directory</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="connect.html">Connect</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="footer-heading">Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="resources.html#legal">Legal Clarity</a></li>
+                        <li><a href="resources.html#tech">Tech Pathways</a></li>
+                        <li><a href="resources.html#business">Business Intel</a></li>
+                        <li><a href="resources.html#templates">Templates</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="footer-heading">Community</h5>
+                    <ul class="footer-links">
+                        <li><a href="connect.html#projects">Active Projects</a></li>
+                        <li><a href="connect.html#propose">Propose an Idea</a></li>
+                        <li><a href="connect.html#events">Events</a></li>
+                        <li><a href="mailto:hello@globalcitizens.engineering">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 Global Citizens Engineers. Built by the network, for the network.</span>
+                <span>Open source. Open community.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
