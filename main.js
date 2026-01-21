@@ -436,39 +436,73 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const isSelf = currentUser && currentUser.name === member.name;
 
+    const vouchedText = (member.vouchedBy && member.vouchedBy.length > 0)
+      ? `🛡️ <strong>Vouched by</strong> ${member.vouchedBy.slice(0, 2).join(', ')}${member.vouchedBy.length > 2 ? ' and ' + (member.vouchedBy.length - 2) + ' others' : ''}.`
+      : `<span>Member since ${member.joined || '2025'}</span>`;
+
     modal.innerHTML = `
-      <div class="modal-content" style="max-width: 500px;">
-        <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-content profile-modal" style="max-width: 600px; padding: 0; overflow: hidden; border-radius: var(--radius-lg);">
+        <button class="modal-close" onclick="closeModal()" style="z-index: 10; background: rgba(0,0,0,0.1); width: 32px; height: 32px; border-radius: 50%; color: var(--ink-primary);">✕</button>
         
-        <div style="text-align: center; margin-bottom: var(--space-6);">
-          <div class="member-avatar" style="width: 80px; height: 80px; font-size: 32px; margin: 0 auto var(--space-4); background: var(--tan-dark); color: var(--paper);">
-            ${member.initials}
-          </div>
-          <div style="display:flex; justify-content:center; align-items:center; gap:var(--space-2);">
-             <h2 style="margin-bottom: var(--space-2);">${member.name}</h2>
-             ${member.verified ? '<span style="color:#2563eb" title="Verified Member"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>' : ''}
-          </div>
-          <p style="color: var(--text-secondary); font-size: var(--text-lg);">${member.role}</p>
-          <div style="display: flex; gap: var(--space-4); justify-content: center; margin-top: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm);">
-            <span>📍 ${member.location}</span>
-            <span>🏢 ${member.industry}</span>
-          </div>
-        </div>
+        <!-- Cover -->
+        <div style="height: 120px; background: var(--tan-light); border-bottom: 1px solid var(--tan-dark);"></div>
 
-        <div style="background: var(--paper-warm); padding: var(--space-4); border-radius: var(--radius-md); margin-bottom: var(--space-6);">
-            <p style="line-height: 1.6; margin-bottom: var(--space-4);">${member.bio}</p>
-            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                ${tagsHtml}
-            </div>
-        </div>
+        <div style="padding: 0 32px 32px;">
+            <!-- Header -->
+            <div style="position: relative; top: -40px; margin-bottom: -20px;">
+                <div class="member-avatar" style="width: 96px; height: 96px; font-size: 36px; border: 4px solid white; box-shadow: var(--shadow-md); background: var(--tan-dark); color: var(--paper);">
+                    ${member.initials}
+                </div>
+                
+                <div style="margin-top: var(--space-4);">
+                    <h2 style="font-family: var(--font-serif); font-size: var(--text-2xl); margin: 0; display: flex; align-items: center; gap: 8px;">
+                        ${member.name}
+                        ${member.verified ? '<span style="color:#2563eb; font-size: 18px;" title="Verified Member">✓</span>' : ''}
+                    </h2>
+                    <p style="color: var(--text-secondary); margin: 4px 0 12px; font-size: var(--text-lg);">${member.role}</p>
+                    
+                    <div style="display: flex; gap: var(--space-4); font-size: var(--text-sm); color: var(--text-secondary);">
+                        <span>📍 ${member.location}</span>
+                        <span>🏢 ${member.industry}</span>
+                        ${member.website ? `<span>🔗 <a href="${member.website}" target="_blank" style="text-decoration: underline;">Website</a></span>` : ''}
+                    </div>
+                </div>
 
-        <div style="display: flex; gap: var(--space-3);">
-             ${isSelf
+                 <div style="margin-top: 24px; display: flex; gap: var(--space-3);">
+                    ${isSelf
         ? `<button class="btn btn-secondary" style="flex:1;" onclick="alert('Profile editing coming soon')">Edit Profile</button>
-                  <button class="btn btn-primary" style="flex:1;">Settings</button>`
-        : `${member.website ? `<a href="${member.website}" target="_blank" class="btn btn-secondary" style="flex:1; text-align:center;">Visit Website</a>` : ''}
-                  <button onclick="openConnectModal(${member.id})" class="btn btn-primary" style="flex:1;">Message</button>`
+                        <button class="btn btn-primary" style="flex:1;">Settings</button>`
+        : `<button onclick="openConnectModal(${member.id})" class="btn btn-primary" style="flex:1;">Connect</button>
+                        <button class="btn btn-ghost" style="flex:1; border: 1px solid var(--tan-dark);">Message</button>`
       }
+                </div>
+            </div>
+
+            <!-- Trust Bar -->
+            <div style="margin-top: 24px; padding: 12px 16px; background: #eff6ff; border-radius: 8px; font-size: var(--text-sm); color: #1e40af; display: flex; align-items: center; gap: 8px;">
+                ${vouchedText}
+            </div>
+
+            <!-- Tabs (Visual Only for MVP) -->
+            <div style="display: flex; border-bottom: 1px solid var(--tan-dark); margin-top: 32px;">
+                <div style="padding: 12px 24px; font-weight: 600; border-bottom: 2px solid var(--ink-primary); cursor: pointer;">Overview</div>
+                <div style="padding: 12px 24px; color: var(--ink-secondary); cursor: pointer;">Work</div>
+                <div style="padding: 12px 24px; color: var(--ink-secondary); cursor: pointer;">Intel</div>
+            </div>
+
+            <!-- Tab Content -->
+            <div style="padding-top: 24px;">
+                <h4 style="font-family: var(--font-serif); margin-bottom: var(--space-3);">About</h4>
+                <p style="line-height: 1.6; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                    ${member.bio}
+                </p>
+
+                <h4 style="font-family: var(--font-serif); margin-bottom: var(--space-3);">Specialties</h4>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    ${tagsHtml}
+                </div>
+            </div>
+
         </div>
       </div>
     `;

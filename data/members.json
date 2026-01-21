@@ -15,7 +15,12 @@
       "industry": "technology",
       "bio": "Building democratic digital infrastructure for worker-owned cooperatives. Teaching 'Code purely' workshops.",
       "website": "https://example.com/maya",
-      "joined": "2025-12-01"
+      "joined": "2025-12-01",
+      "vouchedBy": [
+        "Jordan Rivera",
+        "Sarah Kim",
+        "Elena Rodriguez"
+      ]
     },
     {
       "id": 2,
@@ -31,7 +36,11 @@
       "industry": "legal",
       "bio": "Helping creative independents 'unf*ck' their contracts. Author of the 'Plain Language Service Agreement'.",
       "website": "https://example.com/jordan",
-      "joined": "2025-11-15"
+      "joined": "2025-11-15",
+      "vouchedBy": [
+        "Maya Lin",
+        "Marcus Thorne"
+      ]
     },
     {
       "id": 3,
@@ -46,7 +55,11 @@
       "industry": "design",
       "bio": "Crafting visual identities for regenerative agriculture and local food systems.",
       "website": "https://example.com/sarah",
-      "joined": "2025-11-20"
+      "joined": "2025-11-20",
+      "vouchedBy": [
+        "Freyia Anderson",
+        "David Chen"
+      ]
     },
     {
       "id": 4,

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCE Profile Prototypes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap');
+
+        :root {
+            --tan-light: #f5f0e6;
+            --tan-dark: #b8a88a;
+            --ink-primary: #2c2a26;
+            --text-secondary: #5c5a52;
+            --accent: #8b7355;
+            --paper: #fffef9;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        body {
+            background: var(--tan-dark);
+            font-family: var(--font-sans);
+            color: var(--ink-primary);
+            padding: 40px;
+            margin: 0;
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            align-items: flex-start;
+        }
+
+        .prototype-container {
+            flex: 0 0 400px;
+            background: var(--paper);
+            min-height: 800px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .proto-label {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* CONCEPT A: THE PASSPORT */
+        .concept-a {
+            font-family: var(--font-mono);
+        }
+
+        .concept-a .header {
+            background: var(--ink-primary);
+            color: var(--paper);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .concept-a .id-block {
+            border: 2px solid var(--ink-primary);
+            margin: 20px;
+            padding: 15px;
+            position: relative;
+        }
+
+        .concept-a .stamp {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent);
+            color: white;
+            padding: 4px 8px;
+            font-size: 10px;
+            transform: rotate(10deg);
+        }
+
+        .concept-a .data-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ccc;
+            padding: 8px 0;
+            font-size: 12px;
+        }
+
+        .concept-a h2 {
+            font-family: var(--font-serif);
+            margin: 0;
+        }
+
+        /* CONCEPT B: THE MAKER */
+        .concept-b .hero {
+            height: 250px;
+            background: #333;
+            /* Placeholder img */
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            color: white;
+        }
+
+        .concept-b .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, black, transparent);
+        }
+
+        .concept-b .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .concept-b .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: var(--tan-light);
+        }
+
+        .concept-b .tile {
+            aspect-ratio: 1;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* CONCEPT C: THE OFFICIAL HYBRID */
+        .concept-c .cover {
+            height: 120px;
+            background: var(--tan-light);
+            border-bottom: 1px solid var(--tan-dark);
+        }
+
+        .concept-c .profile-header {
+            padding: 0 24px;
+            position: relative;
+            top: -40px;
+            margin-bottom: -20px;
+        }
+
+        .concept-c .avatar {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .concept-c .badge-verified {
+            color: #2563eb;
+            font-size: 14px;
+            margin-left: 4px;
+        }
+
+        .concept-c .trust-bar {
+            margin: 20px 24px;
+            padding: 12px;
+            background: #eff6ff;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .concept-c .tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin-top: 24px;
+        }
+
+        .concept-c .tab {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+
+        .concept-c .tab.active {
+            border-bottom-color: var(--ink-primary);
+            color: var(--ink-primary);
+        }
+
+        .btn {
+            background: var(--ink-primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONCEPT A -->
+    <div style="position:relative;">
+        <div class="proto-label">Concept A: The Passport</div>
+        <div class="prototype-container concept-a">
+            <div class="header">
+                <div style="font-size: 10px; letter-spacing: 2px; opacity: 0.7;">GLOBAL CITIZENS REGISTRY</div>
+                <h2 style="font-size: 24px;">DESHON_JACKSON</h2>
+                <div style="margin-top: 4px; font-size: 12px;">ID: 994-22-A</div>
+            </div>
+
+            <div class="id-block">
+                <div class="stamp">VERIFIED</div>
+                <div class="data-row">
+                    <span>ROLE</span>
+                    <strong>Full Stack Engineer</strong>
+                </div>
+                <div class="data-row">
+                    <span>LOCATION</span>
+                    <strong>Arcata, CA</strong>
+                </div>
+                <div class="data-row">
+                    <span>MEMBER SINCE</span>
+                    <strong>Jan 2024</strong>
+                </div>
+                <div class="data-row">
+                    <span>VOUCHED BY</span>
+                    <strong>3 Members</strong>
+                </div>
+            </div>
+
+            <div style="padding: 20px;">
+                <h3 style="font-size: 14px; border-bottom: 2px solid black; padding-bottom: 4px;">VISA STAMPS (SKILLS)
+                </h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+                    <div style="border: 1px solid black; padding: 4px 8px; font-size: 10px;">JAVASCRIPT</div>
+                    <div style="border: 1px solid black; padding: 4px 8px; font-size: 10px;">REACT</div>
+                    <div style="border: 1px solid black; padding: 4px 8px; font-size: 10px;">NODE.JS</div>
+                    <div style="border: 1px solid black; padding: 4px 8px; font-size: 10px;">UX DESIGN</div>
+                </div>
+
+                <h3 style="margin-top: 30px; font-size: 14px; border-bottom: 2px solid black; padding-bottom: 4px;">LOGS
+                </h3>
+                <div style="font-size: 12px; margin-top: 10px;">
+                    <p>> Deployed "Spark Engine" v2</p>
+                    <p>> Validated by Sarah C.</p>
+                </div>
+            </div>
+
+            <div style="position: absolute; bottom: 20px; left: 20px; right: 20px;">
+                <button
+                    style="width: 100%; background: transparent; border: 2px solid black; padding: 12px; font-family: 'Space Mono'; font-weight: bold;">REQUEST
+                    CONNECTION</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONCEPT B -->
+    <div style="position:relative;">
+        <div class="proto-label">Concept B: The Maker</div>
+        <div class="prototype-container concept-b">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2 style="font-family: var(--font-serif); font-size: 32px; margin: 0;">Deshon Jackson</h2>
+                    <p style="margin: 4px 0 0; opacity: 0.8;">Builder · Engineer · Tinkerer</p>
+                </div>
+            </div>
+
+            <div style="padding: 20px; display: flex; gap: 10px;">
+                <button class="btn" style="flex:1;">Follow</button>
+                <button class="btn"
+                    style="background: transparent; border: 1px solid #ccc; color: black;">Message</button>
+            </div>
+
+            <div class="grid">
+                <div class="tile" style="grid-column: span 2; aspect-ratio: 2/1; background: #eee;">
+                    <strong>Featured Project: Thesidia</strong>
+                </div>
+                <div class="tile">Javascript</div>
+                <div class="tile">React</div>
+                <div class="tile" style="background: #2c2a26; color: white;">3 Articles</div>
+                <div class="tile">8 Events</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONCEPT C -->
+    <div style="position:relative;">
+        <div class="proto-label">Concept C: The Hybrid</div>
+        <div class="prototype-container concept-c">
+            <div class="cover"></div>
+            <div class="profile-header">
+                <div class="avatar">DJ</div>
+
+                <h1
+                    style="font-family: var(--font-serif); font-size: 24px; margin: 0; display: flex; align-items: center;">
+                    Deshon Jackson
+                    <span class="badge-verified">✓</span>
+                </h1>
+                <p style="color: var(--text-secondary); margin: 4px 0 12px;">Full Stack Engineer building Thesidia</p>
+
+                <div style="display: flex; gap: 4px; font-size: 12px; color: var(--text-secondary);">
+                    <span>📍 Arcata, CA</span>
+                    <span>·</span>
+                    <span>🔗 deshon.io</span>
+                </div>
+
+                <div style="margin-top: 16px; display: flex; gap: 8px;">
+                    <button class="btn" style="flex: 1;">Connect</button>
+                    <button class="btn"
+                        style="background: white; border: 1px solid #ccc; color: black;">Message</button>
+                </div>
+            </div>
+
+            <div class="trust-bar">
+                <span>🛡️ <strong>Vouched by</strong> Sarah C., Mike R., and 3 others.</span>
+            </div>
+
+            <div class="tabs">
+                <div class="tab active">Overview</div>
+                <div class="tab">Work</div>
+                <div class="tab">Intel</div>
+            </div>
+
+            <div style="padding: 24px;">
+                <h4 style="font-family: var(--font-serif); margin-top: 0;">About</h4>
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
+                    Passionate about building decentralized systems and community tools. Currently focused on expanding
+                    the Global Citizens network.
+                </p>
+
+                <h4 style="font-family: var(--font-serif); margin-top: 24px;">Highlights</h4>
+                <div style="background: var(--tan-light); padding: 12px; border-radius: 8px; margin-top: 8px;">
+                    <strong style="display: block; font-size: 14px;">Founder of Thesidia</strong>
+                    <span style="font-size: 12px; opacity: 0.7;">Project · 2024</span>
+                </div>
+                <div style="background: var(--tan-light); padding: 12px; border-radius: 8px; margin-top: 8px;">
+                    <strong style="display: block; font-size: 14px;">The Future of Tech</strong>
+                    <span style="font-size: 12px; opacity: 0.7;">Article · 5 min read</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
