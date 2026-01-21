@@ -63,221 +63,49 @@
     },
     {
       "id": 4,
-      "name": "Alex Dubois",
-      "initials": "AD",
-      "role": "Local AI Automation Engineer",
-      "location": "Lyon, France",
+      "name": "Marcus Thorne",
+      "initials": "MT",
+      "role": "Civic Data Scientist",
+      "location": "Chicago, IL",
       "tags": [
-        "Local AI",
-        "Python",
-        "Small Biz Ops"
+        "Data Viz",
+        "Civic Tech"
       ],
-      "industry": "technology",
-      "bio": "Deploying local LLMs for small businesses to automate admin without giving data to big tech.",
-      "website": "https://example.com/alex",
+      "industry": "data",
+      "bio": "Visualizing municipal budgets to empower community organizers. Believes data should be public infrastructure.",
+      "website": "https://example.com/marcus",
       "joined": "2025-12-05"
     },
     {
       "id": 5,
-      "name": "Taylor Washington",
-      "initials": "TW",
-      "role": "Community Wealth Strategist",
-      "location": "Chicago, IL",
+      "name": "Elena Rodriguez",
+      "initials": "ER",
+      "role": "Ethical AI Researcher",
+      "location": "Barcelona, ES",
       "tags": [
-        "Finance",
-        "Community Wealth"
+        "AI Ethics",
+        "Policy"
       ],
-      "industry": "consulting",
-      "bio": "Designing funding models for community land trusts and neighborhood equity funds.",
-      "website": "https://example.com/taylor",
-      "joined": "2025-11-10"
-    },
-    {
-      "id": 6,
-      "name": "Elena Martinez",
-      "initials": "EM",
-      "role": "Civic User Researcher",
-      "location": "Mexico City",
-      "tags": [
-        "Civic Tech",
-        "User Research"
-      ],
-      "industry": "design",
-      "bio": "Researching how communities interact with municipal digital services to advocate for better access.",
+      "industry": "research",
+      "bio": "Auditing algorithms for bias. Advocating for 'Slow AI' and human-in-the-loop systems.",
       "website": "https://example.com/elena",
-      "joined": "2025-12-10"
-    },
-    {
-      "id": 7,
-      "name": "Nathan Kowalski",
-      "initials": "NK",
-      "role": "Open Hardware Prototyper",
-      "location": "Portland, OR",
-      "tags": [
-        "Hardware",
-        "3D Printing",
-        "Repair"
-      ],
-      "industry": "manufacturing",
-      "bio": "Running a 'Right to Repair' lab. Designing open-source parts for vintage machinery.",
-      "website": "https://example.com/nathan",
-      "joined": "2025-11-25"
-    },
-    {
-      "id": 8,
-      "name": "Olivia Patel",
-      "initials": "OP",
-      "role": "Micro-VC for Makers",
-      "location": "London, UK",
-      "tags": [
-        "Finance",
-        "Micro-Funding"
-      ],
-      "industry": "finance",
-      "bio": "Structuring micro-loans and revenue-share agreements for maker-spaces and craft businesses.",
-      "website": "https://example.com/olivia",
-      "joined": "2025-12-01"
-    },
-    {
-      "id": 9,
-      "name": "Chris Bennett",
-      "initials": "CB",
-      "role": "Digital Garden Gardener",
-      "location": "Remote",
-      "tags": [
-        "Education",
-        "PKM",
-        "Writing"
-      ],
-      "industry": "education",
-      "bio": "Teaching 'Personal Knowledge Management' and helping people build their own digital gardens.",
-      "website": "https://example.com/chris",
-      "joined": "2025-11-18"
-    },
-    {
-      "id": 10,
-      "name": "Rosa Alvarado",
-      "initials": "RA",
-      "role": "Documentary Photographer",
-      "location": "Austin, TX",
-      "tags": [
-        "Visual Storytelling",
-        "Journalism"
-      ],
-      "industry": "creative",
-      "bio": "Documenting the rise of the 'Maker Economy' in the American South.",
-      "website": "https://example.com/rosa",
-      "joined": "2025-12-08"
-    },
-    {
-      "id": 11,
-      "name": "David Thompson",
-      "initials": "DT",
-      "role": "Privacy-First Sysadmin",
-      "location": "Toronto, Canada",
-      "tags": [
-        "Security",
-        "Self-Hosting"
-      ],
-      "industry": "technology",
-      "bio": "Helping non-profits self-host their email and cloud storage to ensure data sovereignty.",
-      "website": "https://example.com/david",
       "joined": "2025-11-30"
     },
     {
-      "id": 12,
-      "name": "Lisa Nguyen",
-      "initials": "LN",
-      "role": "Ethical Marketing Consultant",
-      "location": "San Francisco, CA",
-      "tags": [
-        "Marketing",
-        "No-Ads"
-      ],
-      "industry": "consulting",
-      "bio": "Strategies for growing businesses through community and content, without paid ads or tracking.",
-      "website": "https://example.com/lisa",
-      "joined": "2025-12-12"
-    }
-  ],
-  "projects": [
-    {
-      "id": 1,
-      "title": "Local Food Supply Chain App",
-      "description": "An open-source logistics tool for connecting urban farmers directly with neighborhood restaurants. removing the middle-man distributor.",
-      "content": "The current food distribution creates an artificial bottleneck between urban farmers and local restaurants. The 'distributor' model takes a 30% cut merely for aggregation. \n\nWe are building a decentralized logistics application using SvelteKit and Supabase that allows for peer-to-peer ordering and fulfillment. This isn't just about code; it's about network topology. By connecting the nodes directly, we increase resilience.\n\n### Current Status\nWe have the database schema mapped out and a basic UI for the farmer dashboard. We are looking for a mobile-focused UX designer to help us streamline the driver interface. The goal is to maximize efficiency for small-batch deliveries.",
-      "status": "looking",
-      "tags": [
-        "Logistics",
-        "Food Systems",
-        "App Dev"
-      ],
-      "proposer": "Maya Lin",
-      "postedDate": "2026-01-15",
-      "helpNeeded": "UX Designer for mobile interface"
-    },
-    {
-      "id": 2,
-      "title": "Artist Collective Legal DAO",
-      "description": "A lightweight governance structure for a 50-person artist housing co-op. We need to codify our decision-making process.",
-      "content": "We are a 50-person artist housing cooperative in Berlin facing a crisis of governance. Traditional voting is too slow, but pure consensus is causing gridlock. \n\nWe are exploring a hybrid model that uses a DAO structure for financial decisions (allocation of maintenance funds) while retaining a human-centric council for social disputes. \n\n### The Problem\nMost DAO tools are hyper-financialized. We need a 'Governance Stack' that prioritizes human relationships over tokenomics. We are looking for a Legal Technologist who understands both Solidity smart contracts and German Cooperative Law to help us draft the initial constitution.",
-      "status": "looking",
-      "tags": [
-        "Governance",
-        "Legal",
-        "Web3"
-      ],
-      "proposer": "Jordan Rivera",
-      "postedDate": "2026-01-11",
-      "helpNeeded": "Governance Architect / Legal Engineer"
-    },
-    {
-      "id": 3,
-      "title": "The 'No-Code' Repair Manual",
-      "description": "Crowdsourcing repair guides for common household IoT devices that are no longer supported by manufacturers.",
-      "content": "Planned obsolescence is an engineering crime. We are building a repository of 'Jailbreak Guides' for common IoT devices (thermostats, smart bulbs, fridges) that have lost manufacturer support. \n\nThe goal is to flash them with open-source firmware (like Tasmota or ESPHome) to reclaim them from the landfill. \n\nThis project involves: \n1. Hardware testing (identifying pins). \n2. Writing clear, non-technical documentation for average users. \n3. Creating a searchable database of devices.\n\nWe have a team of 12 people efficiently working on the database, but we need more writers.",
-      "status": "in-progress",
+      "id": 6,
+      "name": "David Chen",
+      "initials": "DC",
+      "role": "Hardware Hacker / Repair Tech",
+      "location": "Shenzhen / Seattle",
       "tags": [
         "Right to Repair",
-        "Hardware",
-        "Documentation"
+        "Hardware"
       ],
-      "team": 12,
-      "startedDate": "2026-01-04",
-      "helpNeeded": null
-    }
-  ],
-  "events": [
-    {
-      "id": 1,
-      "title": "Unf*ck Your Contracts Workshop",
-      "type": "virtual",
-      "date": "2026-01-25",
-      "description": "Stop being scared of the legalese. We go line-by-line through a standard MSA and cross out the bullish*t.",
-      "content": "Most freelancers sign contracts they don't understand because they feel they have no choice. This workshop changes that dynamic. \n\nIn this 90-minute session, we will print out a standard Master Services Agreement (MSA) and attack it with red pens. \n\n**We will cover:**\n- Indemnification clauses: Why they are dangerous and how to limit them.\n- IP Rights: ensuring you own your work until you get paid.\n- Termination clauses: protecting your cash flow.\n- 'Work Made for Hire': The magic words you need to watch out for.\n\nBring your own scary contracts. We will demystify them together.",
-      "host": "Jordan Rivera",
-      "hostInitials": "JR"
-    },
-    {
-      "id": 2,
-      "title": "Co-op Tech Office Hours",
-      "type": "virtual",
-      "date": "2026-02-08",
-      "description": "Ask questions about setting up digital infrastructure for your collective. Email, chat, cloud - self-hosted.",
-      "content": "Open session for anyone struggling with digital infrastructure. Whether you are trying to set up a Nextcloud instance, debug a mail server, or just figure out which project management tool isn't spyware, come hang out. \n\nNo question is too basic. We are here to help you own your data.",
-      "host": "Network Team",
-      "hostInitials": "GC"
-    },
-    {
-      "id": 3,
-      "title": "Oakland Fabrication Meetup",
-      "type": "in-person",
-      "date": "2026-02-22",
-      "description": "Tours of local maker spaces and 'show and tell' of current prototypes. Pizza provided by local sourdough bakery.",
-      "content": "Join us at the Omni Commons in Oakland for our monthly fabrication meetup. This month we are focusing on 'Appropriate Technology'—tools that are small-scale, decentralized, and environmentally sound. \n\nVisual artist Rosa Alvarado will be presenting her work on recycled plastic extruders. \n\n**Schedule:**\n- 6:00 PM: Doors Open & Food\n- 6:30 PM: Shop Tour\n- 7:00 PM: Show & Tell\n- 8:00 PM: Socializing",
-      "host": "Nathan Kowalski",
-      "hostInitials": "NK",
-      "location": "Oakland, CA"
+      "verified": true,
+      "industry": "hardware",
+      "bio": "Documenting supply chains and teaching people how to fix their own devices. Founder of 'OpenFix'.",
+      "website": "https://example.com/david",
+      "joined": "2025-11-10"
     }
   ],
   "resources": [
@@ -306,6 +134,128 @@
       ],
       "author": "Maya Lin",
       "readTime": "18 min read"
+    },
+    {
+      "id": 3,
+      "title": "Pricing Your Work: The Psychology of Value",
+      "excerpt": "Stop billing by the hour. Start billing by the value you create. A masterclass in signaling, anchoring, and negotiation.",
+      "content": "# The Hourly Trap\n\nBilling by the hour punishes efficiency. If you get better and faster, you make less money. It creates a perverse incentive to work slowly.\n\n## Value-Based Pricing\n\nInstead of asking \"How long will this take?\", ask \"What is this worth to the client?\". \n\nIf you build an automation script that saves a company $50,000 a year, and it takes you 2 hours to write, should you charge $200 (2 hours x $100)? No. You should charge $5,000 (10% of the value captured). \n\n## The Anchoring Effect\n\nWhen presenting a price, always offer options. \n\n1.  **The Anchor (High)**: \"Full Transformation\" - $15,000\n2.  **The Target (Middle)**: \"Core Solution\" - $8,000\n3.  **The Floor (Low)**: \"Minimal Viable\" - $4,000\n\nMost clients will pick the middle option. Without the high anchor, the middle option feels expensive. With it, it feels like a deal.",
+      "tags": [
+        "Finance",
+        "Strategy",
+        "Psychology"
+      ],
+      "author": "Jordan Rivera",
+      "readTime": "14 min read"
+    },
+    {
+      "id": 4,
+      "title": "The Power of Networks: Why Competition is Dead",
+      "excerpt": "In a connected economy, your network is your net worth. Moving from zero-sum competition to positive-sum collaboration.",
+      "content": "# Metcalfe's Law for Small Business\n\nMetcalfe's Law states that the value of a network is proportional to the square of the number of connected users. \n\n## The Solopreneur Fallacy\n\nTraditional business thinking is competitive: *\"I need to beat the other guy to get the client.\"* \n\nNetwork thinking is collaborative: *\"If I partner with the other guy, we can bid on a contract that is 10x larger than either of us could handle alone.\"*\n\n## Building Nodes, Not Fortresses\n\nDon't build a business that is a walled garden. Build a node that connects easily with others. \n\n*   **Standardize your inputs/outputs** (Clear pricing, clear deliverables).\n*   **Refer aggressively**: If a job isn't a fit, send it to a peer immediately. The goodwill returns to you with interest (Karma Capital).",
+      "tags": [
+        "Business Intel",
+        "Strategy"
+      ],
+      "author": "Sarah Kim",
+      "readTime": "12 min read"
+    },
+    {
+      "id": 5,
+      "title": "When to Say No: The Art of Opportunity Cost",
+      "excerpt": "Every 'Yes' to a bad client is a 'No' to a good one. How to identify red flags and protect your most valuable asset: focus.",
+      "content": "# The Hell Yeah or No Heuristic\n\nDerek Sivers said it best: \"If it's not a Hell Yeah, it's a No.\" \n\n## Early Warning Signs (Red Flags)\n\n1.  **The \"Quick\" Request**: \"This should only take five minutes.\" (It never does. It implies they don't value the complexity of your work).\n2.  **The Bargainer**: \"I can pay you in exposure.\" (Exposure doesn't pay rent. This signals they will be high-maintenance).\n3.  **The Chaos Agent**: Emails at 11 PM on Saturday. (They lack boundaries, and will trample yours).\n\n## Scope Creep as Technical Debt\n\nAccepting a bad client is like merging bad code into your `main` branch. It introduces bugs (stress), slows down performance (distraction), and requires massive refactoring (firing them) later. \n\n**Keep your branch clean.**",
+      "tags": [
+        "Operations",
+        "Mental Models"
+      ],
+      "author": "Jordan Rivera",
+      "readTime": "10 min read"
+    },
+    {
+      "id": 6,
+      "title": "HTML & CSS: The Architecture of Information",
+      "excerpt": "It's not just about making things pretty. It's about structuring information so it survives the future. Semantic HTML vs. Div Soup.",
+      "content": "# The Document Object Model (DOM)\n\nEverything you see on the web is a tree. A giant family tree of parents and children. \n\n## Semantic HTML\n\nWriting `<div class=\"bold\">Title</div>` is visual. Writing `<h1>Title</h1>` is semantic.\n\n*   **Accessibility**: Screen readers need semantics to navigate.\n*   **SEO**: Robots need semantics to understand importance.\n*   **Future Proofing**: CSS changes every year (Tables -> Floats -> Flexbox -> Grid). Semantic HTML remains valid for decades.\n\n## CSS Variables (Custom Properties)\n\nStop hardcoding `#333`. Use `--ink-primary`. \n\nThis is not just for themes; it's for *meaning*. When you define `--space-unit: 8px`, you are creating a system (physics) for your world, rather than just painting pixels.",
+      "tags": [
+        "Tech",
+        "Web Standards"
+      ],
+      "author": "Maya Lin",
+      "readTime": "30 min read"
+    },
+    {
+      "id": 7,
+      "title": "Rights of the Independent: Misclassification",
+      "excerpt": "The 'ABC Test' and what it means for you. Are you a freelancer or an exploited employee in disguise?",
+      "content": "# The Employee vs. Contractor Boundary\n\nCorporations love contractors efficiently because they don't pay payroll tax, health insurance, or unemployment. But often, they treat them like employees.\n\n## The ABC Test (California & Others)\n\nTo be a valid contractor, you must meet ALL three:\n\n*   **A**: You are free from the control/direction of the hirer.\n*   **B**: You perform work that is *outside* the usual course of the hiring entity's business.\n*   **C**: You are independently established in that trade.\n\n## The Trap\n\nIf a design firm hires a freelance designer to do design work (Failing B), that freelancer is legally an employee. \n\n**Know your status.** If they control your hours, your tools, and your process, you are an employee. Demand the benefits.",
+      "tags": [
+        "Legal",
+        "Labor Rights"
+      ],
+      "author": "Jordan Rivera",
+      "readTime": "15 min read"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Community Mesh Network",
+      "description": "Deploying 50 LoRaWAN nodes to create an off-grid communication layer for the Greater Bay Area.",
+      "tags": [
+        "Hardware",
+        "IoT",
+        "Disaster Prep"
+      ],
+      "proposer": "David Chen",
+      "status": "Active Funding",
+      "content": "# Project: Bay Area Mesh\n\n## Objective\nCreate a resilient, decentralized text-communication network that survives ISP blackouts during earthquakes or fires.\n\n## The Tech Stack\n- **Hardware**: Meshtastic on ESP32 boards.\n- **Power**: 5V Solar panels + 18650 Battery cells.\n- **Protocol**: LoRa (Long Range radio) at 915MHz.\n\n## Current Status\nWe have tested point-to-point links from Oakland Hills to San Francisco (12 miles). We need 50 more nodes to create reliable coverage in the valleys.\n\n## Needs\n- Electrical Engineers for battery casing design.\n- Rust developers for the bridge application."
+    },
+    {
+      "id": 2,
+      "title": "Open Source Agro-Robotics",
+      "description": "Building a $500 CNC farming robot for small urban lots. Weeding, seeding, and watering automation.",
+      "tags": [
+        "Robotics",
+        "AgTech",
+        "Python"
+      ],
+      "proposer": "Sarah Kim",
+      "status": "Prototyping",
+      "content": "# Project: GardenBot V1\n\n## The Problem\nIndustrial agriculture relies on massive tractors and monocultures. Small scale permaculture is labor intensive. We need a middle path: high-tech, small-scale.\n\n## The Solution\nA gantry-style CNC machine that moves over a garden bed. It uses computer vision (OpenCV) to identify weeds and mechanically remove them.\n\n## Roadmap\n- [x] Gantry mechanical build\n- [ ] Stepper motor controller (Arduino)\n- [ ] Weed recognition model training"
+    },
+    {
+      "id": 3,
+      "title": "Freelance Guild Smart Contracts",
+      "description": "A DAO for creative freelancers to pool insurance funds and dispute resolution.",
+      "tags": [
+        "Web3",
+        "Governance",
+        "Legal"
+      ],
+      "proposer": "Jordan Rivera",
+      "status": "Research",
+      "content": "# Project: The Guild DAO\n\n## Concept\nFreelancers are fragile alone. Together, we can form a mutual aid network.\n\n## Mechanics\n1. **Tithing**: Members contribute 2% of income to a treasury.\n2. **Income Smoothing**: If a member has a dry month, they can draw from the pool (repaid later).\n3. **Arbitration**: If a client doesn't pay, the Guild blacklists them and covers legal fees.\n\n## Tech\nBuilt on Gnosis Safe and MolochDAO framework."
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Hardware Hacking Night",
+      "date": "Oct 24, 7:00 PM",
+      "location": "The Omni Commons, Oakland",
+      "host": "David Chen",
+      "type": "Workshop",
+      "content": "Bring your broken electronics! We will be repairing toasters, laptops, and vintage audio gear. Learn how to use a multimeter and soldering iron."
+    },
+    {
+      "id": 2,
+      "title": "Future of Co-ops Panel",
+      "date": "Nov 02, 6:00 PM",
+      "location": "Virtual (Zoom)",
+      "host": "Maya Lin",
+      "type": "Discussion",
+      "content": "A roundtable discussion on how technology can scale the cooperative model. Guests from Mondragon Corporation and Rochdale Capital."
     }
   ],
   "sparkFeed": [
@@ -338,17 +288,6 @@
       "content": "Is anyone else seeing a shift away from 'User Experience' towards 'User Agency'? I want to build tools that give people power, not just 'delight'.",
       "tags": [
         "Design Philosophy"
-      ],
-      "time": "1 day ago"
-    },
-    {
-      "id": 104,
-      "author": "Nathan Kowalski",
-      "avatar": "NK",
-      "content": "3D printed a replacement gear for a 1950s stand mixer today. Total cost: $0.12. Value of kept appliance: $300. Value of keeping it out of landfill: Priceless.",
-      "tags": [
-        "Repair",
-        "3D Printing"
       ],
       "time": "1 day ago"
     }
