@@ -1170,36 +1170,55 @@ a:hover {
     padding-bottom: 100px;
   }
 }
+
 /* ============================================
    V3 Mobile Cleanup
    ============================================ */
 @media (max-width: 768px) {
-    /* Hide Top Nav completely, we have Bottom Nav */
-    .nav {
-        display: none !important;
-    }
 
-    /* Adjust Body for no top nav */
-    body {
-        padding-top: 20px !important; 
-    }
+  /* V3: Restore Top Nav but keep it minimal */
+  .nav {
+    display: block !important;
+    background: rgba(255, 255, 255, 0.95);
+    /* More solid on mobile for readability */
+    height: 60px;
+    /* Explicit height */
+  }
 
-    /* Reduce heavy spacing */
-    .section {
-        padding-top: var(--space-8);
-        padding-bottom: var(--space-8);
-    }
-  
-    /* Fix Hero height */
-    .hero {
-        min-height: auto;
-        padding-top: var(--space-8);
-        padding-bottom: var(--space-12);
-    }
+  .nav-inner {
+    height: 60px;
+  }
 
-    /* Better card spacing on mobile */
-    .dashboard-grid {
-        grid-template-columns: 1fr !important;
-        gap: var(--space-4) !important;
-    }
+  /* Fix "Letters touching the side" - Ensure global container padding */
+  .container,
+  .container-reading,
+  .container-wide {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    width: 100%;
+  }
+
+  /* Adjust Body for Top Nav presence + Spacing correction */
+  body {
+    padding-top: 80px !important;
+  }
+
+  /* Reduce heavy spacing */
+  .section {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+
+  /* Fix Hero height */
+  .hero {
+    min-height: auto;
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-12);
+  }
+
+  /* Better card spacing on mobile */
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6) !important;
+  }
 }
