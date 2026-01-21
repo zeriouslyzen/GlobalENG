@@ -849,7 +849,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const progressBar = document.createElement('div');
     progressBar.style.cssText = `
       position: fixed;
-      top: 72px;
+      top: 57px;
       left: 0;
       width: 0%;
       height: 3px;
