@@ -283,27 +283,29 @@
   "resources": [
     {
       "id": 1,
-      "title": "Understanding Contract Language",
-      "excerpt": "A plain-language guide to the clauses that corporations use to shift liability and control.",
-      "content": "# Understanding Contract Language\n\nContracts are not magic spells; they are just agreements written in a specific, often exclusionary, dialect of English. The purpose of this dialect is often to obscure the balance of power.\n\n## Key Concepts\n\n### 1. Indemnification\nIndemnification is a promise to pay for someone else's loss. If you agree to 'indemnify and hold harmless' your client for any claims arising from your work, you are effectively acting as their insurance company.\n**Action:** Always limit indemnification to your own negligence. Never indemnify for third-party claims.\n\n### 2. Intellectual Property (IP)\nWho owns the work? In the US, if you are a contractor, you own the copyright unless you explicitly assign it in writing. This is your leverage.\n**Action:** Use an 'IP Transfer upon Full Payment' clause. They don't get the rights until the check clears.\n\n### 3. Scope Creep\nThe contract should define the 'Scope of Work' rigidly. Anything outside that box is a 'Change Order' and costs extra.\n**Action:** define what you are *not* doing as clearly as what you *are* doing.",
+      "title": "Understanding Contract Language: The API of Human Agreement",
+      "excerpt": "A plain-language guide to the clauses that corporations use to shift liability. Treat law as code that compiles into reality.",
+      "content": "# Law is Code\n\nWhen we sign a contract, we are executing a script that defines future states of relationship. Just like bad code throws errors, bad contracts create liabilities.\n\n## 1. Indemnification: The 'Catch-All' Exception\n\nThis is the `try...catch` block of legal liability. If you agree to indemnify a client, you are essentially saying: *\"If this code crashes the server (lawsuit happens), I will pay for the damages.\"*\n\n### The Fix\n\nALWAYS limit indemnification to your own *gross negligence* or *willful misconduct*. Never indemnify for third-party claims arising from the client's use of your work.\n\n## 2. IP Assignment: Who Owns the Repo?\n\nMany standard contracts have a \"Work for Hire\" clause that assigns *all* IP created during the term to the client. This is like giving them your entire GitHub account, not just the repo you built for them.\n\n### The Fix\n\nSpecify that \"Background Technology\" (your pre-existing libraries/tools) remains yours, and you grant them a *license* to use it. Only the *specific deliverables* are assigned to them.\n\n## 3. Jurisdiction: The Server Location\n\nIf you live in California but agree to \"Governing Law: New York\", you are agreeing to be sued in a court 3,000 miles away. This is a latency issue that costs thousands in travel and local counsel fees.\n\n**Takeaway**: Read contracts like pull requests. Reject bad diffs.",
       "tags": [
-        "Legal",
-        "Freelance"
+        "Legal Engineering",
+        "Freelance",
+        "Sovereignty"
       ],
       "author": "Jordan Rivera",
-      "readTime": "10 min read"
+      "readTime": "12 min read"
     },
     {
       "id": 2,
-      "title": "Your First Website: No-Code to Full Control",
-      "excerpt": "A pathway from drag-and-drop builders to understanding the code beneath.",
-      "content": "# From Consumer to Engineer\n\nBuilding a website is the first step in claiming digital territory. Many start with Squarespace or Wix, which are fine tools, but they are 'rented land'. You don't own the platform, and you are subject to their price hikes and terms of service.\n\n## The Pathway\n\n1.  **Static HTML/CSS**: Write a simple `index.html` file. Host it on GitHub Pages or Netlify. Total cost: $0.\n2.  **Static Site Generators**: Use tools like Jekyll or Hugo to manage content without a database.\n3.  **Self-Hosting**: Buy a Raspberry Pi or use a cheap VPS ($5/mo) to host your own server. \n\nBy moving down this stack, you gain control. You understand how the DNS works, how the HTTP request flows, and how to fix it when it breaks.",
+      "title": "The Sovereignty Stack: Beyond 'Learning to Code'",
+      "excerpt": "Why Full Stack Engineering is about more than JavaScript. It's about owning your digital supply chain from the metal up.",
+      "content": "# The Illusion of Cloud\n\n\"The Cloud\" is just someone else's computer. When you build entirely on Vercel, Firebase, or AWS, you are a digital tenant. You are renting capabilities, not owning them.\n\n## Level 1: The Application Layer (Tenant)\n\nThis is where most bootcamps stop. You know React and CSS. You can build a beautiful frontend, but if the API shuts down, your app is a dead interface.\n\n## Level 2: The Server Layer (Homeowner)\n\nYou run a Linux VPS (Virtual Private Server). You understand Nginx, Docker, and SSH keys. You aren't afraid of the terminal.\n\n*   **Why it matters**: You can host 100 websites for $5/mo. You are not billed per 'serverless function invocation'.\n\n## Level 3: The Data Layer (Sovereign)\n\nYou own your database. You backup your data to a physical drive in your house. You are not datamined.\n\n## The Goal: Digital Permaculture\n\nWe teach engineering not just for jobs, but for *agency*. A Global Citizen Engineer should be able to spin up a communication network for their community if the main internet goes down. That requires understanding systems, not just syntax.",
       "tags": [
-        "Tech",
-        "Web"
+        "Systems Thinking",
+        "Self-Hosting",
+        "Philosophy"
       ],
       "author": "Maya Lin",
-      "readTime": "15 min read"
+      "readTime": "18 min read"
     }
   ],
   "sparkFeed": [
