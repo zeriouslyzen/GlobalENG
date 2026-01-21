@@ -306,6 +306,42 @@
       ],
       "author": "Maya Lin",
       "readTime": "18 min read"
+    },
+    {
+      "id": 3,
+      "title": "The Power of Networks Over Competition",
+      "excerpt": "Why collaboration beats competition for small businesses. Real examples of how network effects can grow your business faster than going alone.",
+      "content": "# The Myth of the Zero-Sum Game\n\nTraditional business school teaches that you are in a war for market share. If your competitor wins a client, you lose. This is 'scarcity thinking'.\n\n## Network Effects\n\nIn a network, value increases with every new node. If you are a designer and you meet a developer, you don't compete; you unlock the ability to sell full websites.\n\n### The 'Referral Loop'\n\nInstead of fighting for the same slice of pie, build a referral cartel. \n1.  Identify 3 businesses that serve your client *before* or *after* you.\n2.  Agree to pass leads.\n3.  The client gets a seamless experience; you get free marketing.\n\n## Coopetition\n\nEven direct competitors can be allies. If you are overbooked, who do you trust to take the overflow? A vetted 'competitor'. This keeps the client in your trusted circle rather than sending them to a stranger.",
+      "tags": [
+        "Strategy",
+        "Business"
+      ],
+      "author": "Sarah Kim",
+      "readTime": "12 min read"
+    },
+    {
+      "id": 4,
+      "title": "Pricing Your Work: Value vs. Time",
+      "excerpt": "How to price services without undervaluing yourself. Understanding value-based pricing, when to raise rates, and how to communicate worth.",
+      "content": "# Stop Renting Your Hands\n\nCharging by the hour is an incentive structure that punishes efficiency. If you get better and faster, you get paid less. That is broken.\n\n## The Three Pricing Models\n\n1.  **Cost-Plus**: Your expenses + 20%. (Commodity pricing).\n2.  **Market Rate**: What everyone else charges. (Safe, but limits growth).\n3.  **Value-Based**: Pricing based on the *result* you deliver.\n\n### How to Pivot to Value\n\nDon't ask \"What is my time worth?\" Ask \"What is this solution worth to the client?\" \n\nIf you fix a bug that saves them $10,000/month, charging $500 for 2 hours of work is a crime. Charge $2,000. They still get an 80% discount on the value.",
+      "tags": [
+        "Finance",
+        "Freelance"
+      ],
+      "author": "Jordan Rivera",
+      "readTime": "14 min read"
+    },
+    {
+      "id": 5,
+      "title": "When to Say No: The Art of Scope Defense",
+      "excerpt": "Not every opportunity is the right one. Learn to recognize bad-fit clients, scope creep, and projects that cost more than they're worth.",
+      "content": "# The Red Flags\n\nClient selection is the single biggest determinant of your happiness. Bad clients cannot be managed; they must be avoided.\n\n## Warning Signs\n\n1.  **\"This should be quick...\"**: They are devaluing the work before you start.\n2.  **\"I've burned through 3 developers...\"**: You are not the savior; you are victim #4.\n3.  **Vague Budgets**: \"We'll pay fair\" is not a number.\n\n## How to Say No\n\n\"I don't think I'm the best fit for this specific phase of your growth. I recommend [competitor/resource].\" \n\nThis preserves the relationship without taking the poison pill.",
+      "tags": [
+        "Operations",
+        "Soft Skills"
+      ],
+      "author": "Maya Lin",
+      "readTime": "10 min read"
     }
   ],
   "sparkFeed": [
