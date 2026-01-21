@@ -29,6 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (document.getElementById('sparkFeed')) {
           renderSparkFeed(appData.sparkFeed);
         }
+        if (document.getElementById('projectsGrid')) {
+          renderProjects(appData.projects);
+        }
+        if (document.getElementById('eventsGrid')) {
+          renderEvents(appData.events);
+        }
 
         console.log('Global Citizens Data Loaded');
       }
@@ -38,6 +44,110 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   init();
+  updateAuthUI();
+  injectBottomNav();
+
+  // ============================================
+  // Mobile Bottom Nav Injection
+  // ============================================
+  function injectBottomNav() {
+    // Only if not already present
+    if (document.querySelector('.bottom-nav')) return;
+
+    const nav = document.createElement('nav');
+    nav.className = 'bottom-nav';
+
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    const items = [
+      { label: 'Home', href: 'index.html', icon: '<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>' },
+      { label: 'Directory', href: 'directory.html', icon: '<path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>' },
+      { label: 'Connect', href: 'connect.html', icon: '<path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H3V8h2v5h6v-5h2v5h8V8h2v5H11z"/>' },
+      { label: 'Intel', href: 'resources.html', icon: '<path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/>' }
+    ];
+
+    // Note for Connect icon: used standard mail/chat path, replaced with generic shape
+    // Better Connect Icon (Flash/Bolt)
+    items[2].icon = '<path d="M7 2v11h3v9l7-12h-4l4-8z"/>';
+
+    items.forEach(item => {
+      const link = document.createElement('a');
+      link.href = item.href;
+      link.className = 'bottom-nav-item';
+      if (item.href === currentPage) link.classList.add('active');
+
+      link.innerHTML = `
+            <svg viewBox="0 0 24 24">${item.icon}</svg>
+            <span>${item.label}</span>
+        `;
+      nav.appendChild(link);
+    });
+
+    document.body.appendChild(nav);
+  }
+
+  // ============================================
+  // Auth UI Updates
+  // ============================================
+  function updateAuthUI() {
+    const userJson = localStorage.getItem('gce_currentUser');
+    if (!userJson) return;
+
+    const user = JSON.parse(userJson);
+    const navCta = document.querySelector('.nav-cta');
+    const heroBtn = document.querySelector('a[href="#join"].btn-ghost');
+
+    // Update Nav Button
+    if (navCta) {
+      navCta.textContent = `● ${user.name}`;
+      navCta.href = '#profile'; // Placeholder for future profile page
+      navCta.style.borderColor = '#4ade80';
+      navCta.title = 'You are a verified member';
+    }
+
+    // Update "Join" button in Quick Actions if present
+    if (heroBtn) {
+      heroBtn.textContent = '✓ Membership Active';
+      heroBtn.href = '#';
+      heroBtn.style.color = 'var(--text-primary)';
+      heroBtn.style.cursor = 'default';
+    }
+
+    // Hide Join Section if on connect page (optional, but requested "instant access" feel)
+    const joinSection = document.getElementById('join');
+    if (joinSection) {
+      // We could hide it, or replace it with a "Member Dashboard" snippet
+      // For now, let's leave it but maybe change the header
+      const joinHeader = joinSection.querySelector('h2');
+      if (joinHeader) joinHeader.textContent = `Welcome back, ${user.name.split(' ')[0]}`;
+
+      // Hide form container?
+      const formCard = joinSection.querySelector('.card');
+      if (formCard) formCard.hidden = true;
+
+      // Show "You are already a member" message
+      if (!document.getElementById('member-welcome-msg')) {
+        const msg = document.createElement('div');
+        msg.id = 'member-welcome-msg';
+        msg.className = 'card';
+        msg.style.padding = 'var(--space-8)';
+        msg.style.textAlign = 'center';
+        msg.innerHTML = `
+                <div style="font-size: 48px; margin-bottom: var(--space-4);">👋</div>
+                <h3>Good to see you, ${user.name}!</h3>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+                    Your membership is active. You have full access to the directory and project board.
+                </p>
+                <button onclick="localStorage.removeItem('gce_currentUser'); window.location.reload();" class="btn btn-secondary">Sign Out (Test Mode)</button>
+             `;
+        joinSection.querySelector('.container').appendChild(msg);
+
+        // Hide the original grid content to clean up
+        const grid = joinSection.querySelector('.container > div');
+        if (grid) grid.style.display = 'none';
+      }
+    }
+  }
 
   // ============================================
   // Mobile Navigation Toggle
@@ -102,13 +212,24 @@ document.addEventListener('DOMContentLoaded', function () {
         `<span class="tag" onclick="filterByTag('${tag}')">${tag}</span>`
       ).join('');
 
+      const verifiedBadge = member.verified ? `
+        <span class="verified-badge" title="Verified Member">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+          </svg>
+        </span>
+      ` : '';
+
       card.innerHTML = `
         <div class="card-body">
           <div style="display: flex; gap: var(--space-4); align-items: center; margin-bottom: var(--space-4);">
             <div class="member-avatar">${member.initials}</div>
             <div>
-              <h3 class="member-name">${member.name}</h3>
-              <p class="member-role">${member.role}</p>
+              <div style="display: flex; align-items: center;">
+                <h3 class="member-name" style="margin-bottom: 0;">${member.name}</h3>
+                ${verifiedBadge}
+              </div>
+              <p class="member-role" style="margin-top: var(--space-1);">${member.role}</p>
             </div>
           </div>
           
@@ -201,9 +322,108 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================
   // Somatic Connect Modal
   // ============================================
-  window.openConnectModal = function (memberId) {
-    const member = appData.members.find(m => m.id === memberId);
+  // ============================================
+  // Somatic Connect Modal & Profiles
+  // ============================================
+
+  // Helper: Find member by name string
+  window.findMemberByName = function (name) {
+    if (!name) return null;
+    return appData.members.find(m => m.name.toLowerCase() === name.toLowerCase());
+  }
+
+  // Open Full Profile Modal
+  window.openMemberProfile = function (name) {
+    const member = findMemberByName(name);
     if (!member) return;
+
+    // Remove existing
+    const existing = document.querySelector('.modal-backdrop');
+    if (existing) existing.remove();
+
+    const modal = document.createElement('div');
+    modal.className = 'modal-backdrop';
+
+    const tagsHtml = member.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+    // Check if *we* are logged in
+    const userJson = localStorage.getItem('gce_currentUser');
+    const currentUser = userJson ? JSON.parse(userJson) : null;
+
+    modal.innerHTML = `
+      <div class="modal-content" style="max-width: 500px;">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        
+        <div style="text-align: center; margin-bottom: var(--space-6);">
+          <div class="member-avatar" style="width: 80px; height: 80px; font-size: 32px; margin: 0 auto var(--space-4); background: var(--tan-dark); color: var(--paper);">
+            ${member.initials}
+          </div>
+          <div style="display:flex; justify-content:center; align-items:center; gap:var(--space-2);">
+             <h2 style="margin-bottom: var(--space-2);">${member.name}</h2>
+             ${member.verified ? '<span style="color:#2563eb" title="Verified Member"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>' : ''}
+          </div>
+          <p style="color: var(--text-secondary); font-size: var(--text-lg);">${member.role}</p>
+          <div style="display: flex; gap: var(--space-4); justify-content: center; margin-top: var(--space-2); color: var(--text-secondary); font-size: var(--text-sm);">
+            <span>📍 ${member.location}</span>
+            <span>🏢 ${member.industry}</span>
+          </div>
+        </div>
+
+        <div style="background: var(--paper-warm); padding: var(--space-4); border-radius: var(--radius-md); margin-bottom: var(--space-6);">
+            <p style="line-height: 1.6; margin-bottom: var(--space-4);">${member.bio}</p>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                ${tagsHtml}
+            </div>
+        </div>
+
+        <div style="display: flex; gap: var(--space-3);">
+             ${member.website ? `<a href="${member.website}" target="_blank" class="btn btn-secondary" style="flex:1; text-align:center;">Visit Website</a>` : ''}
+             <button onclick="openConnectModal(${member.id})" class="btn btn-primary" style="flex:1;">Message</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+    requestAnimationFrame(() => modal.classList.add('active'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  };
+
+  // Connect Modal (Enhanced)
+  window.openConnectModal = function (contextId, type = 'member') {
+    let title = 'Connect';
+    let subtitle = '';
+    let recipientName = '';
+    let recipientInitials = '';
+
+    // Determine Context
+    if (type === 'member') {
+      const member = appData.members.find(m => m.id === contextId);
+      if (!member) return;
+      recipientName = member.name;
+      recipientInitials = member.initials;
+      title = `Connect with ${member.name}`;
+      subtitle = member.role;
+    } else if (type === 'project') {
+      const project = appData.projects.find(p => p.id === contextId);
+      if (!project) return;
+      // Try to find proposer, otherwise generic
+      const proposer = findMemberByName(project.proposer);
+      recipientName = project.proposer || 'the team';
+      recipientInitials = proposer ? proposer.initials : 'GC';
+      title = `Discuss "${project.title}"`;
+      subtitle = `Project Lead: ${project.proposer}`;
+    } else if (type === 'event') {
+      const event = appData.events.find(e => e.id === contextId);
+      if (!event) return;
+      recipientName = event.host;
+      recipientInitials = event.hostInitials;
+      title = `RSVP: ${event.title}`;
+      subtitle = `Hosted by ${event.host}`;
+    }
+
+    // Check Auth State
+    const userJson = localStorage.getItem('gce_currentUser');
+    const user = userJson ? JSON.parse(userJson) : null;
 
     // Remove existing if any
     const existing = document.querySelector('.modal-backdrop');
@@ -212,28 +432,45 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.createElement('div');
     modal.className = 'modal-backdrop';
 
+    // Form logic: Pre-fill if user exists
+    const emailValue = user ? user.email : '';
+    const namePlaceholder = user ? `Hi ${recipientName.split(' ')[0]}, this is ${user.name}...` : `Hi ${recipientName.split(' ')[0]}, I'm interested in...`;
+
+    // Message "Sent as..." badge
+    const senderBadge = user ? `
+        <div style="margin-bottom: var(--space-4); padding: var(--space-2) var(--space-3); background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; font-size: var(--text-xs); color: #1e40af; display: inline-flex; align-items: center; gap: 6px;">
+            <span>●</span> Sending as <strong>${user.name}</strong> (${user.role})
+        </div>
+    ` : '';
+
     modal.innerHTML = `
       <div class="modal-content">
         <button class="modal-close" onclick="closeModal()">✕</button>
         
         <div style="text-align: center; margin-bottom: var(--space-6);">
           <div class="member-avatar" style="width: 64px; height: 64px; font-size: 24px; margin: 0 auto var(--space-4); background: var(--tan-dark); color: var(--paper);">
-            ${member.initials}
+            ${recipientInitials}
           </div>
-          <h3 style="margin-bottom: var(--space-2);">Connect with ${member.name}</h3>
-          <p style="color: var(--text-secondary);">${member.role}</p>
+          <h3 style="margin-bottom: var(--space-2);">${title}</h3>
+          <p style="color: var(--text-secondary);">${subtitle}</p>
         </div>
         
-        <form onsubmit="handleConnectSubmit(event)">
+        <form onsubmit="handleConnectSubmit(event, '${recipientName}')">
+          ${senderBadge}
+          
           <div class="form-group">
             <label class="form-label">Your Message</label>
-            <textarea class="form-textarea" rows="4" placeholder="Hi ${member.name.split(' ')[0]}, I'm interested in..." required></textarea>
+            <textarea class="form-textarea" rows="4" placeholder="${namePlaceholder}" required></textarea>
           </div>
-          <div class="form-group">
-            <label class="form-label">Your Email</label>
-            <input type="email" class="form-input" placeholder="you@example.com" required>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Connection Request</button>
+          
+          ${!user ? `
+            <div class="form-group">
+                <label class="form-label">Your Email</label>
+                <input type="email" class="form-input" placeholder="you@example.com" value="${emailValue}" required>
+            </div>
+          ` : ''}
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
         </form>
       </div>
     `;
@@ -259,10 +496,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  window.handleConnectSubmit = function (e) {
+  window.handleConnectSubmit = function (e, recipient) {
     e.preventDefault();
     const btn = e.target.querySelector('button');
     const originalText = btn.textContent;
+
+    // Simulate Sending
+    const form = e.target;
+    // Extract message
+    const message = form.querySelector('textarea').value;
+    const userJson = localStorage.getItem('gce_currentUser');
+    const sender = userJson ? JSON.parse(userJson).name : (form.querySelector('input[type="email"]')?.value || 'Guest');
+
+    // Save Message
+    const messages = JSON.parse(localStorage.getItem('gce_messages') || '[]');
+    messages.push({
+      to: recipient,
+      from: sender,
+      body: message,
+      timestamp: new Date().toISOString(),
+      read: false
+    });
+    localStorage.setItem('gce_messages', JSON.stringify(messages));
 
     btn.textContent = 'Sent! ✨';
     btn.style.background = '#4ade80';
@@ -288,6 +543,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const formData = new FormData(form);
       const data = Object.fromEntries(formData);
 
+      // Save submission
       const submissions = JSON.parse(localStorage.getItem(`gce_${formName}`) || '[]');
       submissions.push({
         ...data,
@@ -295,9 +551,27 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       localStorage.setItem(`gce_${formName}`, JSON.stringify(submissions));
 
+      // SPECIAL: Handle Instant Signup (The "Test User" Flow)
+      if (formName === 'join_submissions') {
+        const currentUser = {
+          name: data.name || 'New Member',
+          email: data.email,
+          role: data.work,
+          verified: true // Auto-verify for testing
+        };
+        localStorage.setItem('gce_currentUser', JSON.stringify(currentUser));
+        updateAuthUI(); // Refresh UI immediately
+      }
+
       const button = form.querySelector('button[type="submit"]');
       const originalText = button.textContent;
-      button.textContent = 'Submitted! ✓';
+
+      if (formName === 'join_submissions') {
+        button.textContent = 'Welcome Aboard! 🎉';
+      } else {
+        button.textContent = 'Submitted! ✓';
+      }
+
       button.disabled = true;
       button.style.background = '#4ade80';
       button.style.borderColor = '#4ade80';
@@ -308,7 +582,13 @@ document.addEventListener('DOMContentLoaded', function () {
         button.disabled = false;
         button.style.background = '';
         button.style.borderColor = '';
-      }, 3000);
+
+        // For join form, maybe scroll to top or redirect?
+        if (formName === 'join_submissions') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          // Ideally reload to see all auth changes, or rely on updateAuthUI
+        }
+      }, 2000);
     });
   }
 
@@ -403,4 +683,89 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   console.log('Global Citizens Engineers - Initialized (v2)');
+
+  /* =========================================
+     Projects Rendering
+     ========================================= */
+  function renderProjects(projects) {
+    const grid = document.getElementById('projectsGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    projects.forEach(project => {
+      let statusColor = 'var(--accent)';
+      let statusText = 'Looking for Help'; // Default
+
+      if (project.status === 'in-progress') {
+        statusColor = '#4ade80';
+        statusText = 'In Progress';
+      }
+
+      const tagsHtml = project.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.style.borderLeft = `4px solid ${statusColor}`;
+
+      card.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4);">
+            <div style="flex: 1; min-width: 280px;">
+                <div style="display: flex; gap: var(--space-2); align-items: center; margin-bottom: var(--space-2);">
+                    <span class="badge" style="background: ${statusColor}; color: #fff;">${statusText}</span>
+                    <span style="color: var(--ink-muted); font-size: var(--text-xs);">Posted ${project.postedDate || project.startedDate}</span>
+                </div>
+                <h3 style="margin-bottom: var(--space-2);">${project.title}</h3>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">${project.description}</p>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    ${tagsHtml}
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <p style="font-size: var(--text-sm); color: var(--ink-muted); margin-bottom: var(--space-2);">
+                    ${project.proposer ? 'Proposed by' : 'Team'}
+                </p>
+                <!-- Clickable Proposer Name -->
+                <p style="font-weight: 500; cursor: pointer; text-decoration: underline; text-decoration-color: var(--accent);" 
+                   onclick="openMemberProfile('${project.proposer}')">
+                   ${project.proposer || (project.team + ' members')}
+                </p>
+                <button onclick="openConnectModal(${project.id}, 'project')" class="btn btn-secondary" style="margin-top: var(--space-3);">Connect</button>
+            </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  /* =========================================
+     Events Rendering
+     ========================================= */
+  function renderEvents(events) {
+    const grid = document.getElementById('eventsGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    events.forEach(event => {
+      const badgeClass = event.type === 'virtual' ? 'badge-primary' : 'badge-accent';
+      const badgeText = event.type === 'virtual' ? 'Virtual' : 'In-Person';
+
+      const card = document.createElement('article');
+      card.className = 'card';
+
+      card.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4);">
+            <span class="badge ${badgeClass}">${badgeText}</span>
+            <span style="font-size: var(--text-sm); color: var(--ink-muted);">${event.date}</span>
+        </div>
+        <h4 style="margin-bottom: var(--space-2);">${event.title}</h4>
+        <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4);">${event.description}</p>
+        <div style="display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-4);">
+            <div class="member-avatar" style="width: 32px; height: 32px; font-size: var(--text-sm);">${event.hostInitials}</div>
+            <span style="font-size: var(--text-sm); cursor:pointer; text-decoration:underline;" onclick="openMemberProfile('${event.host}')">Hosted by ${event.host}</span>
+        </div>
+        <button onclick="openConnectModal(${event.id}, 'event')" class="btn btn-secondary" style="width: 100%;">RSVP</button>
+      `;
+      grid.appendChild(card);
+    });
+  }
 });

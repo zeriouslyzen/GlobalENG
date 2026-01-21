@@ -67,9 +67,10 @@
                     <span class="eyebrow">Step One</span>
                     <h2 style="margin-top: var(--space-4); margin-bottom: var(--space-6);">Join the Network</h2>
                     <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
-                        This isn't just another online community. It's a verified network of real people
-                        doing real work. We review every application to ensure quality and alignment
-                        with our principles.
+                        We are building a web of trust. Verified members get a <span style="color: #2563eb;">blue
+                            check</span>
+                        and higher visibility. To get verified, share a link to an active project that proves your
+                        craft.
                     </p>
                     <div style="display: flex; flex-direction: column; gap: var(--space-4);">
                         <div style="display: flex; gap: var(--space-3); align-items: flex-start;">
@@ -84,12 +85,13 @@
                         </div>
                         <div style="display: flex; gap: var(--space-3); align-items: flex-start;">
                             <div
-                                style="width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--paper); display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); flex-shrink: 0;">
-                                2</div>
+                                style="width: 24px; height: 24px; border-radius: 50%; background: #2563eb; color: var(--paper); display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); flex-shrink: 0;">
+                                ✓</div>
                             <div>
                                 <strong>Get verified</strong>
-                                <p style="color: var(--text-secondary); font-size: var(--text-sm); margin: 0;">We
-                                    confirm you're a real person with real work.</p>
+                                <p style="color: var(--text-secondary); font-size: var(--text-sm); margin: 0;">
+                                    We review your active projects to confirm you're building real things.
+                                </p>
                             </div>
                         </div>
                         <div style="display: flex; gap: var(--space-3); align-items: flex-start;">
@@ -106,38 +108,40 @@
                 </div>
 
                 <div class="card" style="padding: var(--space-8);">
-                    <h3 style="margin-bottom: var(--space-6);">Request to Join</h3>
+                    <h3 style="margin-bottom: var(--space-6);">Start Your Membership</h3>
                     <form id="joinForm">
                         <div class="form-group">
                             <label class="form-label" for="name">Full Name *</label>
-                            <input type="text" id="name" class="form-input" placeholder="Your name" required>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name"
+                                required>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label" for="email">Email *</label>
-                            <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com"
+                                required>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="work">What do you do? *</label>
-                            <input type="text" id="work" class="form-input"
+                            <label class="form-label" for="work">Primary Skill / Role *</label>
+                            <input type="text" id="work" name="work" class="form-input"
                                 placeholder="e.g., Web Developer, Designer, Consultant">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label" for="website">Website or Portfolio</label>
-                            <input type="url" id="website" class="form-input" placeholder="https://yoursite.com">
+                            <input type="url" id="website" name="website" class="form-input"
+                                placeholder="https://yoursite.com">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="why">Why do you want to join? *</label>
-                            <textarea id="why" class="form-textarea"
-                                placeholder="Tell us what you're looking for and what you can contribute..."
-                                required></textarea>
+                            <label class="form-label" for="why">What brings you here? *</label>
+                            <textarea id="why" name="why" class="form-textarea"
+                                placeholder="Looking for collaborators? Resources? Just exploring?" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit
-                            Application</button>
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Join Now &nbsp;
+                            →</button>
                     </form>
                 </div>
             </div>
@@ -188,102 +192,11 @@
                 </p>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: var(--space-6);">
-                <!-- Project 1 -->
-                <article class="card" style="border-left: 4px solid var(--accent);">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4);">
-                        <div style="flex: 1; min-width: 280px;">
-                            <div
-                                style="display: flex; gap: var(--space-2); align-items: center; margin-bottom: var(--space-2);">
-                                <span class="badge badge-accent">Looking for Help</span>
-                                <span style="color: var(--ink-muted); font-size: var(--text-xs);">Posted 3 days
-                                    ago</span>
-                            </div>
-                            <h3 style="margin-bottom: var(--space-2);">Open Source Contract Library</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
-                                Building a free, annotated library of fair contract templates for freelancers.
-                                Need legal expertise and web development help.
-                            </p>
-                            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                                <span class="tag">Legal</span>
-                                <span class="tag">Web Development</span>
-                                <span class="tag">Open Source</span>
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <p
-                                style="font-size: var(--text-sm); color: var(--ink-muted); margin-bottom: var(--space-2);">
-                                Proposed by</p>
-                            <p style="font-weight: 500;">Jordan Rivera</p>
-                            <a href="#" class="btn btn-secondary" style="margin-top: var(--space-3);">Learn More</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="card" style="border-left: 4px solid var(--accent);">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4);">
-                        <div style="flex: 1; min-width: 280px;">
-                            <div
-                                style="display: flex; gap: var(--space-2); align-items: center; margin-bottom: var(--space-2);">
-                                <span class="badge badge-accent">Looking for Help</span>
-                                <span style="color: var(--ink-muted); font-size: var(--text-xs);">Posted 1 week
-                                    ago</span>
-                            </div>
-                            <h3 style="margin-bottom: var(--space-2);">Small Business Tech Co-op</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
-                                Creating a shared infrastructure for small businesses: hosting, email, tools—at
-                                cost, owned collectively. Need operations and tech help.
-                            </p>
-                            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                                <span class="tag">Infrastructure</span>
-                                <span class="tag">Co-op</span>
-                                <span class="tag">Technology</span>
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <p
-                                style="font-size: var(--text-sm); color: var(--ink-muted); margin-bottom: var(--space-2);">
-                                Proposed by</p>
-                            <p style="font-weight: 500;">Maya Lin</p>
-                            <a href="#" class="btn btn-secondary" style="margin-top: var(--space-3);">Learn More</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="card" style="border-left: 4px solid #4ade80;">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4);">
-                        <div style="flex: 1; min-width: 280px;">
-                            <div
-                                style="display: flex; gap: var(--space-2); align-items: center; margin-bottom: var(--space-2);">
-                                <span class="badge" style="background: #4ade80; color: #fff;">In Progress</span>
-                                <span style="color: var(--ink-muted); font-size: var(--text-xs);">Started 2 weeks
-                                    ago</span>
-                            </div>
-                            <h3 style="margin-bottom: var(--space-2);">Plain Language Legal Glossary</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
-                                A searchable dictionary of legal terms translated into everyday language.
-                                Currently in development—follow along or contribute.
-                            </p>
-                            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                                <span class="tag">Legal Clarity</span>
-                                <span class="tag">Education</span>
-                                <span class="tag">Writing</span>
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <p
-                                style="font-size: var(--text-sm); color: var(--ink-muted); margin-bottom: var(--space-2);">
-                                Team</p>
-                            <p style="font-weight: 500;">3 members</p>
-                            <a href="#" class="btn btn-secondary" style="margin-top: var(--space-3);">Follow Project</a>
-                        </div>
-                    </div>
-                </article>
+            <div id="projectsGrid" style="display: flex; flex-direction: column; gap: var(--space-6);">
+                <!-- Dynamically loaded from members.json -->
+                <div style="text-align: center; color: var(--text-secondary); padding: var(--space-8);">
+                    Loading projects...
+                </div>
             </div>
 
             <div style="text-align: center; margin-top: var(--space-8);">
@@ -361,64 +274,13 @@
                 </p>
             </div>
 
-            <div
+            <div id="eventsGrid"
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
-                <article class="card">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4);">
-                        <span class="badge badge-primary">Virtual</span>
-                        <span style="font-size: var(--text-sm); color: var(--ink-muted);">Jan 25, 2026</span>
-                    </div>
-                    <h4 style="margin-bottom: var(--space-2);">Contract Review Workshop</h4>
-                    <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-                        Bring your contracts. We'll review them together and learn to spot problematic clauses.
-                    </p>
-                    <div
-                        style="display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-4);">
-                        <div class="member-avatar" style="width: 32px; height: 32px; font-size: var(--text-sm);">JR
-                        </div>
-                        <span style="font-size: var(--text-sm);">Hosted by Jordan Rivera</span>
-                    </div>
-                    <a href="#" class="btn btn-secondary" style="width: 100%;">Register</a>
-                </article>
-
-                <article class="card">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4);">
-                        <span class="badge badge-primary">Virtual</span>
-                        <span style="font-size: var(--text-sm); color: var(--ink-muted);">Feb 8, 2026</span>
-                    </div>
-                    <h4 style="margin-bottom: var(--space-2);">Open Office Hours</h4>
-                    <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-                        Casual drop-in session. Get help with projects, ask questions, or just meet other members.
-                    </p>
-                    <div
-                        style="display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-4);">
-                        <div class="member-avatar" style="width: 32px; height: 32px; font-size: var(--text-sm);">GC
-                        </div>
-                        <span style="font-size: var(--text-sm);">Hosted by Network Team</span>
-                    </div>
-                    <a href="#" class="btn btn-secondary" style="width: 100%;">Register</a>
-                </article>
-
-                <article class="card">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4);">
-                        <span class="badge" style="background: var(--tan-dark); color: var(--paper);">In-Person</span>
-                        <span style="font-size: var(--text-sm); color: var(--ink-muted);">Feb 22, 2026</span>
-                    </div>
-                    <h4 style="margin-bottom: var(--space-2);">Oakland Maker Meetup</h4>
-                    <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-                        First in-person gathering for Bay Area members. Networking, demos, and building connections.
-                    </p>
-                    <div
-                        style="display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-4);">
-                        <div class="member-avatar" style="width: 32px; height: 32px; font-size: var(--text-sm);">NK
-                        </div>
-                        <span style="font-size: var(--text-sm);">Hosted by Nathan Kowalski</span>
-                    </div>
-                    <a href="#" class="btn btn-secondary" style="width: 100%;">RSVP</a>
-                </article>
+                <!-- Dynamically loaded from members.json -->
+                <div
+                    style="grid-column: 1 / -1; text-align: center; color: var(--text-secondary); padding: var(--space-8);">
+                    Loading events...
+                </div>
             </div>
         </div>
     </section>
@@ -484,7 +346,7 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.js?v=2"></script>
 </body>
 
 </html>

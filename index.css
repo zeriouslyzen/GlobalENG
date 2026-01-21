@@ -637,6 +637,17 @@ a:hover {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+}
+
+.verified-badge {
+  display: inline-flex;
+  margin-left: var(--space-2);
+  color: #2563eb;
+  /* Trustworthy Blue */
+  width: 16px;
+  height: 16px;
 }
 
 .member-tags {
@@ -1050,4 +1061,101 @@ a:hover {
 .fade-in-delay-3 {
   animation-delay: 0.3s;
   opacity: 0;
+}
+/* ---------- Mobile Bottom Navigation ---------- */
+.bottom-nav {
+  display: none; /* Hidden by default (desktop) */
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 12px 24px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 10px;
+  gap: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.bottom-nav-item svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  transition: transform 0.2s var(--ease-somatic);
+}
+
+/* Active State */
+.bottom-nav-item.active {
+  color: var(--ink-primary);
+  font-weight: 500;
+}
+
+.bottom-nav-item.active svg {
+  transform: translateY(-2px);
+  color: var(--accent);
+}
+
+.bottom-nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; /* Dots below text */
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Touch Feedback */
+.bottom-nav-item:active {
+  transform: scale(0.9);
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  /* Hide standard nav elements */
+  .nav-logo, .nav-links, .nav-toggle, .nav-cta {
+    display: none !important;
+  }
+  
+  /* Show minimal top logo centered if desired, or simplified header */
+  .nav {
+     justify-content: center;
+     background: rgba(255, 255, 255, 0.9); /* More opacity on mobile */
+     padding: 16px;
+  }
+  
+  .nav::before {
+      content: 'Global Citizens';
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--ink-primary);
+  }
+
+  /* Show Bottom Nav */
+  .bottom-nav {
+    display: flex;
+  }
+
+  /* Add padding to body so content isn't covered */
+  body {
+    padding-bottom: 100px;
+  }
 }

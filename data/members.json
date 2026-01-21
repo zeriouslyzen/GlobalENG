@@ -11,6 +11,7 @@
         "Co-op Tech",
         "Open Source"
       ],
+      "verified": true,
       "industry": "technology",
       "bio": "Building democratic digital infrastructure for worker-owned cooperatives. Teaching 'Code purely' workshops.",
       "website": "https://example.com/maya",
@@ -26,6 +27,7 @@
         "Legal Engineering",
         "Freelance Rights"
       ],
+      "verified": true,
       "industry": "legal",
       "bio": "Helping creative independents 'unf*ck' their contracts. Author of the 'Plain Language Service Agreement'.",
       "website": "https://example.com/jordan",
