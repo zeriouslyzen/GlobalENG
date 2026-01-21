@@ -71,11 +71,11 @@
   --transition-normal: 0.3s;
   --transition-slow: 0.5s;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(44, 42, 38, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(44, 42, 38, 0.06), 0 2px 4px -1px rgba(44, 42, 38, 0.03);
-  --shadow-lg: 0 10px 15px -3px rgba(44, 42, 38, 0.08), 0 4px 6px -2px rgba(44, 42, 38, 0.04);
-  --shadow-somatic: 0 12px 24px -6px rgba(44, 42, 38, 0.06), 0 0 0 1px rgba(44, 42, 38, 0.02);
+  /* Shadows - Modern/Subtle */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --shadow-somatic: 0 4px 20px rgba(0, 0, 0, 0.03);
 
   /* Borders */
   --radius-sm: 4px;
@@ -234,16 +234,19 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(245, 240, 230, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--tan-dark);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 56px;
+  /* Reduced from 72px */
 }
 
 .nav-logo {
@@ -1062,9 +1065,11 @@ a:hover {
   animation-delay: 0.3s;
   opacity: 0;
 }
+
 /* ---------- Mobile Bottom Navigation ---------- */
 .bottom-nav {
-  display: none; /* Hidden by default (desktop) */
+  display: none;
+  /* Hidden by default (desktop) */
   position: fixed;
   bottom: 20px;
   left: 20px;
@@ -1115,7 +1120,8 @@ a:hover {
 .bottom-nav-item.active::after {
   content: '';
   position: absolute;
-  bottom: -4px; /* Dots below text */
+  bottom: -4px;
+  /* Dots below text */
   width: 4px;
   height: 4px;
   background: var(--accent);
@@ -1129,24 +1135,29 @@ a:hover {
 
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
+
   /* Hide standard nav elements */
-  .nav-logo, .nav-links, .nav-toggle, .nav-cta {
+  .nav-logo,
+  .nav-links,
+  .nav-toggle,
+  .nav-cta {
     display: none !important;
   }
-  
+
   /* Show minimal top logo centered if desired, or simplified header */
   .nav {
-     justify-content: center;
-     background: rgba(255, 255, 255, 0.9); /* More opacity on mobile */
-     padding: 16px;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    /* More opacity on mobile */
+    padding: 16px;
   }
-  
+
   .nav::before {
-      content: 'Global Citizens';
-      font-family: var(--font-serif);
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--ink-primary);
+    content: 'Global Citizens';
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--ink-primary);
   }
 
   /* Show Bottom Nav */
@@ -1158,4 +1169,37 @@ a:hover {
   body {
     padding-bottom: 100px;
   }
+}
+/* ============================================
+   V3 Mobile Cleanup
+   ============================================ */
+@media (max-width: 768px) {
+    /* Hide Top Nav completely, we have Bottom Nav */
+    .nav {
+        display: none !important;
+    }
+
+    /* Adjust Body for no top nav */
+    body {
+        padding-top: 20px !important; 
+    }
+
+    /* Reduce heavy spacing */
+    .section {
+        padding-top: var(--space-8);
+        padding-bottom: var(--space-8);
+    }
+  
+    /* Fix Hero height */
+    .hero {
+        min-height: auto;
+        padding-top: var(--space-8);
+        padding-bottom: var(--space-12);
+    }
+
+    /* Better card spacing on mobile */
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-4) !important;
+    }
 }

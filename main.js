@@ -131,61 +131,52 @@ document.addEventListener('DOMContentLoaded', function () {
         // Inject Dashboard Container
         const dashboard = document.createElement('div');
         dashboard.className = 'container dashboard-view';
-        dashboard.style.marginTop = '100px'; // Account for fixed header
+        dashboard.style.marginTop = '80px'; // Account for fixed header
         dashboard.style.minHeight = '80vh';
 
         dashboard.innerHTML = `
-                <div class="dashboard-header" style="margin-bottom: var(--space-8);">
-                    <span class="eyebrow">Member Dashboard</span>
-                    <h1 style="font-family: var(--font-serif); font-size: var(--text-4xl);">Welcome back, ${user.name.split(' ')[0]}.</h1>
-                    <p class="lead" style="max-width: 600px;">
-                        The network has been active. You have <a href="#" style="text-decoration: underline;">3 new matching projects</a> and <a href="#" style="text-decoration: underline;">1 event invitation</a>.
-                    </p>
-                </div>
-
-                <div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-8);">
+                <div class="dashboard-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-8); padding-top: var(--space-8);">
                     
                     <!-- Main Feed -->
-                    <div style="grid-column: span 2;">
-                        <h3 style="margin-bottom: var(--space-4);">Your Feed</h3>
-                        <div id="dashboard-feed">
+                    <div style="min-height: 100vh;">
+                         <div style="margin-bottom: var(--space-6); display: flex; align-items: center; justify-content: space-between;">
+                            <h2 style="font-size: var(--text-2xl); margin:0;">Feed</h2>
+                            <span class="eyebrow" style="opacity: 0.6;">All Updates</span>
+                        </div>
+
+                        <div id="dashboard-feed" style="display: flex; flex-direction: column; gap: var(--space-6);">
                             <!-- Injected by JS -->
                         </div>
                     </div>
 
                     <!-- Sidebar Actions -->
                     <div>
-                        <div class="card" style="position: sticky; top: 100px;">
-                            <h4 style="margin-bottom: var(--space-4);">Quick Actions</h4>
+                        <div class="card" style="position: sticky; top: 100px; border: none; background: rgba(255,255,255,0.5); backdrop-filter: blur(10px);">
+                            <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-6);">
+                                <div class="member-avatar" style="width: 48px; height: 48px; font-size: 20px; background: var(--accent); color: white;">
+                                    ${user.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                                </div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: var(--text-base);">${user.name}</h4>
+                                    <span style="font-size: var(--text-xs); color: var(--ink-muted);">${user.role}</span>
+                                </div>
+                            </div>
+
                             <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: var(--space-3);">
-                                    <a href="connect.html#propose" class="btn btn-secondary" style="width: 100%; justify-content: flex-start;">
-                                        <span>+</span> Start a Project
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: var(--space-3);">
-                                    <button class="btn btn-secondary" style="width: 100%; justify-content: flex-start;">
-                                        <span>✎</span> Write an Article
+                                <li style="margin-bottom: var(--space-2);">
+                                    <button onclick="openMemberProfile('${user.name}')" class="btn btn-ghost" style="width: 100%; justify-content: flex-start; padding-left: 0;">
+                                        Start a Project
                                     </button>
                                 </li>
-                                <li>
-                                    <button onclick="openMemberProfile('${user.name}')" class="btn btn-ghost" style="width: 100%; justify-content: flex-start;">
-                                        <span>👤</span> View My Profile
+                                <li style="margin-bottom: var(--space-2);">
+                                    <button class="btn btn-ghost" style="width: 100%; justify-content: flex-start; padding-left: 0;">
+                                        Write Article
                                     </button>
+                                </li>
+                                <li style="margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid rgba(0,0,0,0.05);">
+                                     <button onclick="localStorage.removeItem('gce_currentUser'); window.location.reload();" class="btn-text" style="color: var(--ink-muted); font-size: var(--text-sm);">Sign Out</button>
                                 </li>
                             </ul>
-                            
-                            <hr style="margin: var(--space-6) 0; border: 0; border-top: 1px solid var(--tan-dark);">
-                            
-                            <h4 style="margin-bottom: var(--space-4);">My Stats</h4>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2);">
-                                <span>Projects</span>
-                                <strong>0</strong>
-                            </div>
-                            <div style="display: flex; justify-content: space-between;">
-                                <span>Connections</span>
-                                <strong>0</strong>
-                            </div>
                         </div>
                     </div>
                 </div>
