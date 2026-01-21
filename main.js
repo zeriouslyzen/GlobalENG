@@ -35,9 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (document.getElementById('eventsGrid')) {
           renderEvents(appData.events);
         }
-        // Resources Page Logic
-        if (document.getElementById('legal-list') || document.getElementById('business-list')) {
-          renderResourcesPage(appData.resources);
+        if (document.getElementById('resourcesGrid')) {
+          renderResources(appData.resources);
         }
 
       }
@@ -758,6 +757,34 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   // ============================================
+  // Render Resources (New)
+  // ============================================
+  function renderResources(resources) {
+    const grid = document.getElementById('resourcesGrid');
+    if (!grid || !resources) return;
+
+    grid.innerHTML = resources.map(resource => `
+        <article class="card resource-card" onclick="openResourceModal(${resource.id})" style="cursor: pointer;">
+          <div class="resource-icon">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+             </svg>
+          </div>
+          <div class="resource-content">
+            <h4 class="resource-title">${resource.title}</h4>
+            <p class="resource-excerpt">${resource.excerpt}</p>
+            <div class="resource-meta">
+              ${(resource.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
+              <span>·</span>
+              <span>${resource.readTime}</span>
+            </div>
+          </div>
+        </article>
+    `).join('');
+  }
+
+  // ============================================
   // Form Handling (General)
   // ============================================
   const joinForm = document.getElementById('joinForm');
@@ -997,61 +1024,5 @@ document.addEventListener('DOMContentLoaded', function () {
       `;
       grid.appendChild(card);
     });
-    /* =========================================
-       Resources Page Rendering
-       ========================================= */
-    function renderResourcesPage(resources) {
-      const legalList = document.getElementById('legal-list');
-      const techList = document.getElementById('tech-list');
-      const businessList = document.getElementById('business-list');
-
-      // Only run if we are on the resources page
-      if (!legalList && !techList && !businessList) return;
-
-      if (!resources || resources.length === 0) return;
-
-      // Helper to generate Card HTML
-      const createCard = (r) => `
-        <article class="card resource-card" onclick="openResourceModal(${r.id})" style="cursor: pointer;">
-            <div class="resource-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-            </div>
-            <div class="resource-content">
-                <h4 class="resource-title">${r.title}</h4>
-                <p class="resource-excerpt">${r.excerpt}</p>
-                <div class="resource-meta">
-                    <span class="tag">${r.tags[0]}</span>
-                    <span>·</span>
-                    <span>${r.readTime}</span>
-                </div>
-            </div>
-        </article>
-    `;
-
-      // Filter and Inject
-      if (legalList) {
-        const legalItems = resources.filter(r =>
-          r.tags.some(t => ['Legal Engineering', 'Legal', 'Contracts', 'Freelance'].includes(t)) && !r.tags.includes('Finance')
-        );
-        legalList.innerHTML = legalItems.map(createCard).join('');
-      }
-
-      if (techList) {
-        const techItems = resources.filter(r =>
-          r.tags.some(t => ['Systems Thinking', 'Self-Hosting', 'Tech', 'Web'].includes(t))
-        );
-        techList.innerHTML = techItems.map(createCard).join('');
-      }
-
-      if (businessList) {
-        const bizItems = resources.filter(r =>
-          r.tags.some(t => ['Strategy', 'Business', 'Finance', 'Operations'].includes(t))
-        );
-        businessList.innerHTML = bizItems.map(createCard).join('');
-      }
-    }
-
-  });
+  }
+});
