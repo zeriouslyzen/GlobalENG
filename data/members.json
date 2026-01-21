@@ -192,6 +192,7 @@
       "id": 1,
       "title": "Local Food Supply Chain App",
       "description": "An open-source logistics tool for connecting urban farmers directly with neighborhood restaurants. removing the middle-man distributor.",
+      "content": "The current food distribution creates an artificial bottleneck between urban farmers and local restaurants. The 'distributor' model takes a 30% cut merely for aggregation. \n\nWe are building a decentralized logistics application using SvelteKit and Supabase that allows for peer-to-peer ordering and fulfillment. This isn't just about code; it's about network topology. By connecting the nodes directly, we increase resilience.\n\n### Current Status\nWe have the database schema mapped out and a basic UI for the farmer dashboard. We are looking for a mobile-focused UX designer to help us streamline the driver interface. The goal is to maximize efficiency for small-batch deliveries.",
       "status": "looking",
       "tags": [
         "Logistics",
@@ -205,7 +206,8 @@
     {
       "id": 2,
       "title": "Artist Collective Legal DAO",
-      "description": "A lightweight governance structure for a 50-person artist housing co-op. We need to codify our decision-making process into a smart contract (or just a really good regular contract).",
+      "description": "A lightweight governance structure for a 50-person artist housing co-op. We need to codify our decision-making process.",
+      "content": "We are a 50-person artist housing cooperative in Berlin facing a crisis of governance. Traditional voting is too slow, but pure consensus is causing gridlock. \n\nWe are exploring a hybrid model that uses a DAO structure for financial decisions (allocation of maintenance funds) while retaining a human-centric council for social disputes. \n\n### The Problem\nMost DAO tools are hyper-financialized. We need a 'Governance Stack' that prioritizes human relationships over tokenomics. We are looking for a Legal Technologist who understands both Solidity smart contracts and German Cooperative Law to help us draft the initial constitution.",
       "status": "looking",
       "tags": [
         "Governance",
@@ -220,6 +222,7 @@
       "id": 3,
       "title": "The 'No-Code' Repair Manual",
       "description": "Crowdsourcing repair guides for common household IoT devices that are no longer supported by manufacturers.",
+      "content": "Planned obsolescence is an engineering crime. We are building a repository of 'Jailbreak Guides' for common IoT devices (thermostats, smart bulbs, fridges) that have lost manufacturer support. \n\nThe goal is to flash them with open-source firmware (like Tasmota or ESPHome) to reclaim them from the landfill. \n\nThis project involves: \n1. Hardware testing (identifying pins). \n2. Writing clear, non-technical documentation for average users. \n3. Creating a searchable database of devices.\n\nWe have a team of 12 people efficiently working on the database, but we need more writers.",
       "status": "in-progress",
       "tags": [
         "Right to Repair",
@@ -238,6 +241,7 @@
       "type": "virtual",
       "date": "2026-01-25",
       "description": "Stop being scared of the legalese. We go line-by-line through a standard MSA and cross out the bullish*t.",
+      "content": "Most freelancers sign contracts they don't understand because they feel they have no choice. This workshop changes that dynamic. \n\nIn this 90-minute session, we will print out a standard Master Services Agreement (MSA) and attack it with red pens. \n\n**We will cover:**\n- Indemnification clauses: Why they are dangerous and how to limit them.\n- IP Rights: ensuring you own your work until you get paid.\n- Termination clauses: protecting your cash flow.\n- 'Work Made for Hire': The magic words you need to watch out for.\n\nBring your own scary contracts. We will demystify them together.",
       "host": "Jordan Rivera",
       "hostInitials": "JR"
     },
@@ -247,6 +251,7 @@
       "type": "virtual",
       "date": "2026-02-08",
       "description": "Ask questions about setting up digital infrastructure for your collective. Email, chat, cloud - self-hosted.",
+      "content": "Open session for anyone struggling with digital infrastructure. Whether you are trying to set up a Nextcloud instance, debug a mail server, or just figure out which project management tool isn't spyware, come hang out. \n\nNo question is too basic. We are here to help you own your data.",
       "host": "Network Team",
       "hostInitials": "GC"
     },
@@ -255,10 +260,37 @@
       "title": "Oakland Fabrication Meetup",
       "type": "in-person",
       "date": "2026-02-22",
-      "description": " tours of local maker spaces and 'show and tell' of current prototypes. Pizza provided by local sourdough bakery.",
+      "description": "Tours of local maker spaces and 'show and tell' of current prototypes. Pizza provided by local sourdough bakery.",
+      "content": "Join us at the Omni Commons in Oakland for our monthly fabrication meetup. This month we are focusing on 'Appropriate Technology'—tools that are small-scale, decentralized, and environmentally sound. \n\nVisual artist Rosa Alvarado will be presenting her work on recycled plastic extruders. \n\n**Schedule:**\n- 6:00 PM: Doors Open & Food\n- 6:30 PM: Shop Tour\n- 7:00 PM: Show & Tell\n- 8:00 PM: Socializing",
       "host": "Nathan Kowalski",
       "hostInitials": "NK",
       "location": "Oakland, CA"
+    }
+  ],
+  "resources": [
+    {
+      "id": 1,
+      "title": "Understanding Contract Language",
+      "excerpt": "A plain-language guide to the clauses that corporations use to shift liability and control.",
+      "content": "# Understanding Contract Language\n\nContracts are not magic spells; they are just agreements written in a specific, often exclusionary, dialect of English. The purpose of this dialect is often to obscure the balance of power.\n\n## Key Concepts\n\n### 1. Indemnification\nIndemnification is a promise to pay for someone else's loss. If you agree to 'indemnify and hold harmless' your client for any claims arising from your work, you are effectively acting as their insurance company.\n**Action:** Always limit indemnification to your own negligence. Never indemnify for third-party claims.\n\n### 2. Intellectual Property (IP)\nWho owns the work? In the US, if you are a contractor, you own the copyright unless you explicitly assign it in writing. This is your leverage.\n**Action:** Use an 'IP Transfer upon Full Payment' clause. They don't get the rights until the check clears.\n\n### 3. Scope Creep\nThe contract should define the 'Scope of Work' rigidly. Anything outside that box is a 'Change Order' and costs extra.\n**Action:** define what you are *not* doing as clearly as what you *are* doing.",
+      "tags": [
+        "Legal",
+        "Freelance"
+      ],
+      "author": "Jordan Rivera",
+      "readTime": "10 min read"
+    },
+    {
+      "id": 2,
+      "title": "Your First Website: No-Code to Full Control",
+      "excerpt": "A pathway from drag-and-drop builders to understanding the code beneath.",
+      "content": "# From Consumer to Engineer\n\nBuilding a website is the first step in claiming digital territory. Many start with Squarespace or Wix, which are fine tools, but they are 'rented land'. You don't own the platform, and you are subject to their price hikes and terms of service.\n\n## The Pathway\n\n1.  **Static HTML/CSS**: Write a simple `index.html` file. Host it on GitHub Pages or Netlify. Total cost: $0.\n2.  **Static Site Generators**: Use tools like Jekyll or Hugo to manage content without a database.\n3.  **Self-Hosting**: Buy a Raspberry Pi or use a cheap VPS ($5/mo) to host your own server. \n\nBy moving down this stack, you gain control. You understand how the DNS works, how the HTTP request flows, and how to fix it when it breaks.",
+      "tags": [
+        "Tech",
+        "Web"
+      ],
+      "author": "Maya Lin",
+      "readTime": "15 min read"
     }
   ],
   "sparkFeed": [

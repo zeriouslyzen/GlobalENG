@@ -36,8 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
           renderEvents(appData.events);
         }
 
-        console.log('Global Citizens Data Loaded');
       }
+
+      console.log('Global Citizens Data Loaded');
+      updateAuthUI();
     } catch (e) {
       console.error('Failed to load data, using fallback/static content', e);
     }
@@ -113,38 +115,112 @@ document.addEventListener('DOMContentLoaded', function () {
       heroBtn.style.cursor = 'default';
     }
 
-    // Hide Join Section if on connect page (optional, but requested "instant access" feel)
-    const joinSection = document.getElementById('join');
-    if (joinSection) {
-      // We could hide it, or replace it with a "Member Dashboard" snippet
-      // For now, let's leave it but maybe change the header
-      const joinHeader = joinSection.querySelector('h2');
-      if (joinHeader) joinHeader.textContent = `Welcome back, ${user.name.split(' ')[0]}`;
 
-      // Hide form container?
-      const formCard = joinSection.querySelector('.card');
-      if (formCard) formCard.hidden = true;
 
-      // Show "You are already a member" message
-      if (!document.getElementById('member-welcome-msg')) {
-        const msg = document.createElement('div');
-        msg.id = 'member-welcome-msg';
-        msg.className = 'card';
-        msg.style.padding = 'var(--space-8)';
-        msg.style.textAlign = 'center';
-        msg.innerHTML = `
-                <div style="font-size: 48px; margin-bottom: var(--space-4);">👋</div>
-                <h3>Good to see you, ${user.name}!</h3>
-                <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
-                    Your membership is active. You have full access to the directory and project board.
-                </p>
-                <button onclick="localStorage.removeItem('gce_currentUser'); window.location.reload();" class="btn btn-secondary">Sign Out (Test Mode)</button>
-             `;
-        joinSection.querySelector('.container').appendChild(msg);
+    // ========================================
+    // LOGGED IN DASHBOARD (INDEX.HTML)
+    // ========================================
+    // If we are on the home page and logged in, show the Dashboard instead of the landing page
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+      if (document.querySelector('.dashboard-view')) return;
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        // Hide standard landing sections
+        document.querySelectorAll('body > section').forEach(el => el.style.display = 'none');
 
-        // Hide the original grid content to clean up
-        const grid = joinSection.querySelector('.container > div');
-        if (grid) grid.style.display = 'none';
+        // Inject Dashboard Container
+        const dashboard = document.createElement('div');
+        dashboard.className = 'container dashboard-view';
+        dashboard.style.marginTop = '100px'; // Account for fixed header
+        dashboard.style.minHeight = '80vh';
+
+        dashboard.innerHTML = `
+                <div class="dashboard-header" style="margin-bottom: var(--space-8);">
+                    <span class="eyebrow">Member Dashboard</span>
+                    <h1 style="font-family: var(--font-serif); font-size: var(--text-4xl);">Welcome back, ${user.name.split(' ')[0]}.</h1>
+                    <p class="lead" style="max-width: 600px;">
+                        The network has been active. You have <a href="#" style="text-decoration: underline;">3 new matching projects</a> and <a href="#" style="text-decoration: underline;">1 event invitation</a>.
+                    </p>
+                </div>
+
+                <div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-8);">
+                    
+                    <!-- Main Feed -->
+                    <div style="grid-column: span 2;">
+                        <h3 style="margin-bottom: var(--space-4);">Your Feed</h3>
+                        <div id="dashboard-feed">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Actions -->
+                    <div>
+                        <div class="card" style="position: sticky; top: 100px;">
+                            <h4 style="margin-bottom: var(--space-4);">Quick Actions</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: var(--space-3);">
+                                    <a href="connect.html#propose" class="btn btn-secondary" style="width: 100%; justify-content: flex-start;">
+                                        <span>+</span> Start a Project
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: var(--space-3);">
+                                    <button class="btn btn-secondary" style="width: 100%; justify-content: flex-start;">
+                                        <span>✎</span> Write an Article
+                                    </button>
+                                </li>
+                                <li>
+                                    <button onclick="openMemberProfile('${user.name}')" class="btn btn-ghost" style="width: 100%; justify-content: flex-start;">
+                                        <span>👤</span> View My Profile
+                                    </button>
+                                </li>
+                            </ul>
+                            
+                            <hr style="margin: var(--space-6) 0; border: 0; border-top: 1px solid var(--tan-dark);">
+                            
+                            <h4 style="margin-bottom: var(--space-4);">My Stats</h4>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2);">
+                                <span>Projects</span>
+                                <strong>0</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Connections</span>
+                                <strong>0</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+        document.body.insertBefore(dashboard, document.querySelector('footer'));
+
+        // Populate Dashboard Feed (Mix of Spark + Featured Project)
+        // Wait a tick for data? No, appData might be ready, or we wait.
+        // Since init() is async, data might not be ready if this runs immediately.
+        // But updateAuthUI is called after init(), so maybe.
+        // Let's rely on a small timeout or check appData.
+        setTimeout(() => {
+          const feed = document.getElementById('dashboard-feed');
+          if (feed && appData.sparkFeed) {
+            const latestSpark = appData.sparkFeed[0];
+            const latestProject = appData.projects[0];
+
+            feed.innerHTML = `
+                        <div class="card" onclick="openProjectModal(${latestProject.id})" style="cursor: pointer; border-left: 4px solid var(--accent); margin-bottom: var(--space-4);">
+                            <div style="font-size: var(--text-xs); color: var(--accent); margin-bottom: var(--space-2); text-transform: uppercase; letter-spacing: 0.05em;">Featured Project</div>
+                            <h3 style="margin-bottom: var(--space-2);">${latestProject.title}</h3>
+                            <p>${latestProject.description}</p>
+                        </div>
+                        
+                        <div class="card" style="margin-bottom: var(--space-4);">
+                             <div style="display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-3);">
+                                <div class="member-avatar" style="width: 32px; height: 32px; font-size: 12px;">${latestSpark.avatar}</div>
+                                <div><strong>${latestSpark.author}</strong> <span style="color: var(--ink-muted);">shared a spark</span></div>
+                            </div>
+                            <p>"${latestSpark.content}"</p>
+                        </div>
+                    `;
+          }
+        }, 500);
       }
     }
   }
@@ -334,7 +410,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Open Full Profile Modal
   window.openMemberProfile = function (name) {
-    const member = findMemberByName(name);
+    let member = findMemberByName(name);
+
+    // Check Auth State
+    const userJson = localStorage.getItem('gce_currentUser');
+    const currentUser = userJson ? JSON.parse(userJson) : null;
+
+    // Fallback: If looking for self but not in directory yet
+    if (!member && currentUser && (name === currentUser.name || name === 'Me')) {
+      member = {
+        id: 'self',
+        name: currentUser.name,
+        initials: currentUser.name.split(' ').map(n => n[0]).join('').substring(0, 2),
+        role: currentUser.role || 'Member',
+        location: 'Remote',
+        tags: ['New Member'],
+        verified: true,
+        industry: 'General',
+        bio: 'This is your profile preview. Complete your onboarding to appear in the public directory.',
+        website: ''
+      };
+    }
+
     if (!member) return;
 
     // Remove existing
@@ -344,11 +441,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.createElement('div');
     modal.className = 'modal-backdrop';
 
-    const tagsHtml = member.tags.map(t => `<span class="tag">${t}</span>`).join('');
+    const tagsHtml = (member.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
 
-    // Check if *we* are logged in
-    const userJson = localStorage.getItem('gce_currentUser');
-    const currentUser = userJson ? JSON.parse(userJson) : null;
+    const isSelf = currentUser && currentUser.name === member.name;
 
     modal.innerHTML = `
       <div class="modal-content" style="max-width: 500px;">
@@ -377,11 +472,17 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
 
         <div style="display: flex; gap: var(--space-3);">
-             ${member.website ? `<a href="${member.website}" target="_blank" class="btn btn-secondary" style="flex:1; text-align:center;">Visit Website</a>` : ''}
-             <button onclick="openConnectModal(${member.id})" class="btn btn-primary" style="flex:1;">Message</button>
+             ${isSelf
+        ? `<button class="btn btn-secondary" style="flex:1;" onclick="alert('Profile editing coming soon')">Edit Profile</button>
+                  <button class="btn btn-primary" style="flex:1;">Settings</button>`
+        : `${member.website ? `<a href="${member.website}" target="_blank" class="btn btn-secondary" style="flex:1; text-align:center;">Visit Website</a>` : ''}
+                  <button onclick="openConnectModal(${member.id})" class="btn btn-primary" style="flex:1;">Message</button>`
+      }
         </div>
       </div>
     `;
+
+
 
     document.body.appendChild(modal);
     requestAnimationFrame(() => modal.classList.add('active'));
@@ -401,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!member) return;
       recipientName = member.name;
       recipientInitials = member.initials;
-      title = `Connect with ${member.name}`;
+      title = `Connect with ${member.name} `;
       subtitle = member.role;
     } else if (type === 'project') {
       const project = appData.projects.find(p => p.id === contextId);
@@ -411,14 +512,14 @@ document.addEventListener('DOMContentLoaded', function () {
       recipientName = project.proposer || 'the team';
       recipientInitials = proposer ? proposer.initials : 'GC';
       title = `Discuss "${project.title}"`;
-      subtitle = `Project Lead: ${project.proposer}`;
+      subtitle = `Project Lead: ${project.proposer} `;
     } else if (type === 'event') {
       const event = appData.events.find(e => e.id === contextId);
       if (!event) return;
       recipientName = event.host;
       recipientInitials = event.hostInitials;
-      title = `RSVP: ${event.title}`;
-      subtitle = `Hosted by ${event.host}`;
+      title = `RSVP: ${event.title} `;
+      subtitle = `Hosted by ${event.host} `;
     }
 
     // Check Auth State
@@ -527,6 +628,104 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
       closeModal();
     }, 1500);
+  };
+
+  // ============================================
+  // Detailed Content Modals (Full Article View)
+  // ============================================
+
+  // Generic Full Content Modal
+  function openContentModal({ title, subtitle, content, tags, actionBtn }) {
+    // Remove existing
+    const existing = document.querySelector('.modal-backdrop');
+    if (existing) existing.remove();
+
+    const modal = document.createElement('div');
+    modal.className = 'modal-backdrop';
+
+    // Parse markdown-ish content (simple paragraph split)
+    const formattedContent = content.split('\n\n').map(p => {
+      if (p.startsWith('### ')) return `<h3>${p.replace('### ', '')}</h3>`;
+      if (p.startsWith('## ')) return `<h2>${p.replace('## ', '')}</h2>`;
+      if (p.startsWith('# ')) return `<h1>${p.replace('# ', '')}</h1>`;
+      if (p.startsWith('- ')) return `<li>${p.replace('- ', '')}</li>`;
+      return `<p>${p}</p>`;
+    }).join('');
+
+    const tagsHtml = (tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+
+    modal.innerHTML = `
+      <div class="modal-content modal-lg" style="max-width: 700px; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        
+        <header style="margin-bottom: var(--space-6); border-bottom: 1px solid var(--tan-dark); padding-bottom: var(--space-4);">
+            <div style="font-size: var(--text-sm); color: var(--accent); margin-bottom: var(--space-2);">${subtitle}</div>
+            <h1 style="font-family: var(--font-serif); font-size: var(--text-3xl); line-height: 1.2;">${title}</h1>
+            <div style="display: flex; gap: var(--space-2); margin-top: var(--space-3);">
+                ${tagsHtml}
+            </div>
+        </header>
+
+        <div class="article-body" style="font-size: var(--text-lg); line-height: 1.7; margin-bottom: var(--space-8);">
+            ${formattedContent}
+        </div>
+
+        <div class="modal-actions" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--tan-dark); padding-top: var(--space-4);">
+            <div style="display: flex; gap: var(--space-4);">
+                <button class="btn-icon" onclick="this.classList.toggle('active'); this.style.color = this.classList.contains('active') ? 'red' : '';">
+                    ♥ <span style="font-size: var(--text-sm);">Like</span>
+                </button>
+                <button class="btn-icon">
+                    💬 <span style="font-size: var(--text-sm);">Comment</span>
+                </button>
+            </div>
+            ${actionBtn}
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+    requestAnimationFrame(() => modal.classList.add('active'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  }
+
+  window.openProjectModal = function (id) {
+    const project = appData.projects.find(p => p.id === id);
+    if (!project) return;
+
+    openContentModal({
+      title: project.title,
+      subtitle: `Project by ${project.proposer}`,
+      content: project.content || project.description,
+      tags: project.tags,
+      actionBtn: `<button onclick="openConnectModal(${project.id}, 'project')" class="btn btn-primary">Connect / Contribute</button>`
+    });
+  };
+
+  window.openEventModal = function (id) {
+    const event = appData.events.find(e => e.id === id);
+    if (!event) return;
+
+    openContentModal({
+      title: event.title,
+      subtitle: `Event hosted by ${event.host} · ${event.date}`,
+      content: event.content || event.description,
+      tags: [event.type],
+      actionBtn: `<button onclick="openConnectModal(${event.id}, 'event')" class="btn btn-primary">RSVP Now</button>`
+    });
+  };
+
+  window.openResourceModal = function (id) {
+    const resource = appData.resources ? appData.resources.find(r => r.id === id) : null;
+    if (!resource) return;
+
+    openContentModal({
+      title: resource.title,
+      subtitle: `Written by ${resource.author} · ${resource.readTime}`,
+      content: resource.content,
+      tags: resource.tags,
+      actionBtn: `<button class="btn btn-secondary">Bookmark</button>`
+    });
   };
 
   // ============================================
@@ -709,12 +908,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       card.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4);">
-            <div style="flex: 1; min-width: 280px;">
+            <div style="flex: 1; min-width: 280px; cursor: pointer;" onclick="openProjectModal(${project.id})">
                 <div style="display: flex; gap: var(--space-2); align-items: center; margin-bottom: var(--space-2);">
                     <span class="badge" style="background: ${statusColor}; color: #fff;">${statusText}</span>
                     <span style="color: var(--ink-muted); font-size: var(--text-xs);">Posted ${project.postedDate || project.startedDate}</span>
                 </div>
-                <h3 style="margin-bottom: var(--space-2);">${project.title}</h3>
+                <h3 style="margin-bottom: var(--space-2); text-decoration: underline; text-decoration-color: transparent; transition: all 0.2s;">${project.title}</h3>
                 <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">${project.description}</p>
                 <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
                     ${tagsHtml}
@@ -757,8 +956,10 @@ document.addEventListener('DOMContentLoaded', function () {
             <span class="badge ${badgeClass}">${badgeText}</span>
             <span style="font-size: var(--text-sm); color: var(--ink-muted);">${event.date}</span>
         </div>
-        <h4 style="margin-bottom: var(--space-2);">${event.title}</h4>
-        <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4);">${event.description}</p>
+        <div style="cursor: pointer;" onclick="openEventModal(${event.id})">
+            <h4 style="margin-bottom: var(--space-2); text-decoration: underline; text-decoration-color: transparent;">${event.title}</h4>
+            <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4);">${event.description}</p>
+        </div>
         <div style="display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-4);">
             <div class="member-avatar" style="width: 32px; height: 32px; font-size: var(--text-sm);">${event.hostInitials}</div>
             <span style="font-size: var(--text-sm); cursor:pointer; text-decoration:underline;" onclick="openMemberProfile('${event.host}')">Hosted by ${event.host}</span>
