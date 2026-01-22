@@ -116,12 +116,12 @@
   "resources": [
     {
       "id": 1,
-      "title": "Understanding Contract Language",
-      "excerpt": "A plain-language guide to the clauses that corporations use to shift liability. Treat law as code that compiles into reality.",
-      "content": "<h1>Law is Code</h1><p>When we sign a contract, we are executing a script that defines future states of relationship. Just like bad code throws errors, bad contracts create liabilities.</p><h2>1. Indemnification: The 'Catch-All' Exception</h2><p>This is the <code>try...catch</code> block of legal liability. If you agree to indemnify a client, you are essentially saying: <em>\"If this code crashes the server (lawsuit happens), I will pay for the damages.\"</em></p><h3>The Fix</h3><p>ALWAYS limit indemnification to your own <strong>gross negligence</strong> or <strong>willful misconduct</strong>. Never indemnify for third-party claims arising from the client's use of your work.</p><h2>2. IP Assignment: Who Owns the Repo?</h2><p>Many standard contracts have a \"Work for Hire\" clause that assigns <em>all</em> IP created during the term to the client. This is like giving them your entire GitHub account, not just the repo you built for them.</p><h3>The Fix</h3><p>Specify that \"Background Technology\" (your pre-existing libraries/tools) remains yours, and you grant them a <em>license</em> to use it. Only the <em>specific deliverables</em> are assigned to them.</p><h2>3. Jurisdiction: The Server Location</h2><p>If you live in California but agree to \"Governing Law: New York\", you are agreeing to be sued in a court 3,000 miles away. This is a latency issue that costs thousands in travel and local counsel fees.</p><blockquote><strong>Takeaway</strong>: Read contracts like pull requests. Reject bad diffs.</blockquote>",
+      "title": "Legal Immunotherapy",
+      "excerpt": "Boosting your organizational immune system against parasitic liability clauses. A guide to defensive contract hygiene.",
+      "content": "<h1>The Corporate Immune System</h1><p>A contract is not just a document; it is an immune response. It defines what passes through your membrane (value, clients) and what gets rejected (liability, scope creep).</p><h2>Identifying Parasitic Clauses</h2><p>Just as a virus hijacks cell machinery, bad clauses hijack your business logic.</p><ul><li><strong>Indemnification</strong>: The 'cytokine storm' of legal risks. If you indemnify for third-party IP, you are accepting a fatal viral load.</li><li><strong>Exclusivity</strong>: A metabolic restrictor. It starves your organism of necessary nutrients (other clients).</li></ul><h2>Protocol for Defense</h2><p>Treat negotiation as <strong>immunotherapy</strong>. You are introducing small doses of resistance (redlines) to strengthen the relationship. A healthy partner respects a strong immune system.</p>",
       "tags": [
         "Legal Engineering",
-        "Freelance",
+        "Bio-Defense",
         "Sovereignty"
       ],
       "author": "Jordan Rivera",
@@ -129,25 +129,25 @@
     },
     {
       "id": 2,
-      "title": "The Sovereignty Stack",
-      "excerpt": "Why Full Stack Engineering is about more than JavaScript. It's about owning your digital supply chain from the metal up.",
-      "content": "<h1>The Illusion of Cloud</h1><p>\"The Cloud\" is just someone else's computer. When you build entirely on Vercel, Firebase, or AWS, you are a digital tenant. You are renting capabilities, not owning them.</p><h2>Level 1: The Application Layer (Tenant)</h2><p>This is where most bootcamps stop. You know React and CSS. You can build a beautiful frontend, but if the API shuts down, your app is a dead interface.</p><h2>Level 2: The Server Layer (Homeowner)</h2><p>You run a Linux VPS (Virtual Private Server). You understand Nginx, Docker, and SSH keys. You aren't afraid of the terminal.</p><ul><li><strong>Why it matters</strong>: You can host 100 websites for $5/mo. You are not billed per 'serverless function invocation'.</li></ul><h2>Level 3: The Data Layer (Sovereign)</h2><p>You own your database. You backup your data to a physical drive in your house. You are not datamined.</p><h2>The Goal: Digital Permaculture</h2><p>We teach engineering not just for jobs, but for <em>agency</em>. A Global Citizen Engineer should be able to spin up a communication network for their community if the main internet goes down. That requires understanding systems, not just syntax.</p>",
+      "title": "Kinetic Profitability",
+      "excerpt": "Reducing operational friction to zero. Using autonomous logistics to create a frictionless flow of value.",
+      "content": "<h1>Friction is Entropy</h1><p>In physics, friction creates heat—waste energy. in business, friction creates cost. <strong>Kinetic Profitability</strong> is the state of zero-resistance value transfer.</p><h2>The Swarm Advantage</h2><p>Traditional logistics are linear and brittle. Swarm logistics are fluid and adaptive.</p><ul><li><strong>Redundancy</strong>: If one drone fails, the swarm heals the gap.</li><li><strong>Speed</strong>: Real-time routing based on atmospheric data reduces energy cost per joule delivered.</li></ul><h2>Defense as Profit</h2><p>A secure perimeter isn't a cost center; it's a profit multiplier. By automating defense (biometric locks, drone patrols), you remove the 'cortisol tax' of constant vigilance from your human team.</p>",
       "tags": [
         "Systems Thinking",
-        "Self-Hosting",
-        "Philosophy"
+        "Kinetic Defense",
+        "Efficiency"
       ],
-      "author": "Maya Lin",
+      "author": "David Chen",
       "readTime": "18 min read"
     },
     {
       "id": 3,
-      "title": "Pricing Your Work",
-      "excerpt": "Stop billing by the hour. Start billing by the value you create. A masterclass in signaling, anchoring, and negotiation.",
-      "content": "<h1>The Hourly Trap</h1><p>Billing by the hour punishes efficiency. If you get better and faster, you make less money. It creates a perverse incentive to work slowly.</p><h2>Value-Based Pricing</h2><p>Instead of asking \"How long will this take?\", ask \"What is this worth to the client?\".</p><p>If you build an automation script that saves a company $50,000 a year, and it takes you 2 hours to write, should you charge $200 (2 hours x $100)? No. You should charge $5,000 (10% of the value captured).</p><h2>The Anchoring Effect</h2><p>When presenting a price, always offer options.</p><ol><li><strong>The Anchor (High)</strong>: \"Full Transformation\" - $15,000</li><li><strong>The Target (Middle)</strong>: \"Core Solution\" - $8,000</li><li><strong>The Floor (Low)</strong>: \"Minimal Viable\" - $4,000</li></ol><p>Most clients will pick the middle option. Without the high anchor, the middle option feels expensive. With it, it feels like a deal.</p>",
+      "title": "Energy Exchange Protocols",
+      "excerpt": "Pricing is not about time; it is about life-force transfer. Aligning economic incentives with biological reality.",
+      "content": "<h1>The ATP of Business</h1><p>Money is just stored energy (ATP). When you undercharge, you are burning your own cellular reserves to fuel someone else's growth. This leads to organizational burnout (cell death).</p><h2>The Input/Output Mismatch</h2><p>Billing by the hour is a leakage of value. You must bill by the <strong>joule of impact</strong>.</p><h3>Anchoring as Signal Strength</h3><p>High prices act as a high-fidelity signal. They filter out noise (bad clients) and attract resonant frequencies (high-value partners). This preserves your bandwidth for deep work.</p>",
       "tags": [
         "Finance",
-        "Strategy",
+        "Bio-Economics",
         "Psychology"
       ],
       "author": "Jordan Rivera",
@@ -155,48 +155,51 @@
     },
     {
       "id": 4,
-      "title": "The Power of Networks",
-      "excerpt": "In a connected economy, your network is your net worth. Moving from zero-sum competition to positive-sum collaboration.",
-      "content": "<h1>Metcalfe's Law for Small Business</h1><p>Metcalfe's Law states that the value of a network is proportional to the square of the number of connected users.</p><h2>The Solopreneur Fallacy</h2><p>Traditional business thinking is competitive: <em>\"I need to beat the other guy to get the client.\"</em></p><p>Network thinking is collaborative: <em>\"If I partner with the other guy, we can bid on a contract that is 10x larger than either of us could handle alone.\"</em></p><h2>Building Nodes, Not Fortresses</h2><p>Don't build a business that is a walled garden. Build a node that connects easily with others.</p><ul><li><strong>Standardize your inputs/outputs</strong> (Clear pricing, clear deliverables).</li><li><strong>Refer aggressively</strong>: If a job isn't a fit, send it to a peer immediately. The goodwill returns to you with interest (Karma Capital).</li></ul>",
+      "title": "Mycelial Economics",
+      "excerpt": "Building anti-fragile alliances. How small businesses can share resources like fungal networks beneath the forest floor.",
+      "content": "<h1>The Wood Wide Web</h1><p>Trees do not compete in a vacuum; they share nutrients via mycelial networks. If one tree is sick, neighbors send carbon. This is the model for the new economy.</p><h2>Node vs. Fortress</h2><p>The 'Fortress Business' tries to own everything vertically. It is strong but brittle. The 'Node Business' owns its core and connects for the rest.</p><ul><li><strong>Shared Intelligence</strong>: Pooling market data across the network.</li><li><strong>Resource Routing</strong>: Passing overflow work to trusted peers instantly.</li></ul><p><strong>Goal</strong>: Create a super-organism that is too distributed to fail.</p>",
       "tags": [
-        "Business Intel",
-        "Strategy"
+        "Network Theory",
+        "Strategy",
+        "Interdependence"
       ],
-      "author": "Sarah Kim",
+      "author": "Maya Lin",
       "readTime": "12 min read"
     },
     {
       "id": 5,
-      "title": "When to Say No",
-      "excerpt": "Every 'Yes' to a bad client is a 'No' to a good one. How to identify red flags and protect your most valuable asset: focus.",
-      "content": "<h1>The Hell Yeah or No Heuristic</h1><p>Derek Sivers said it best: \"If it's not a Hell Yeah, it's a No.\"</p><h2>Early Warning Signs (Red Flags)</h2><ol><li><strong>The \"Quick\" Request</strong>: \"This should only take five minutes.\" (It never does. It implies they don't value the complexity of your work).</li><li><strong>The Bargainer</strong>: \"I can pay you in exposure.\" (Exposure doesn't pay rent. This signals they will be high-maintenance).</li><li><strong>The Chaos Agent</strong>: Emails at 11 PM on Saturday. (They lack boundaries, and will trample yours).</li></ol><h2>Scope Creep as Technical Debt</h2><p>Accepting a bad client is like merging bad code into your <code>main</code> branch. It introduces bugs (stress), slows down performance (distraction), and requires massive refactoring (firing them) later.</p><blockquote>Keep your branch clean.</blockquote>",
+      "title": "The Corporate Athlete",
+      "excerpt": "Optimizing human capital through neuro-feedback. Why biometric data is your most critical defensive asset.",
+      "content": "<h1>The Biological Baseline</h1><p>You cannot run a high-performance organization on low-performance biology. Cognitive decline, stress, and burnout are security vulnerabilities.</p><h2>Quantified Sovereignty</h2><p>Owning your biometric data allows you to:</p><ol><li><strong>Detect Stress Vectors</strong>: GSR sensors reveal which clients spike your cortisol. Fire them.</li><li><strong>Optimize Flow</strong>: EEG feedback loops train your team to enter deep work states on command.</li></ol><h2>Health is Defense</h2><p>A vibrant, well-rested team is immune to social engineering and burnout. Your biology is your firewall.</p>",
       "tags": [
-        "Operations",
-        "Mental Models"
+        "Bio-Hacking",
+        "Human Capital",
+        "Health"
       ],
-      "author": "Jordan Rivera",
+      "author": "Sarah Kim",
       "readTime": "10 min read"
     },
     {
       "id": 6,
-      "title": "HTML & CSS: The Architecture of Information",
-      "excerpt": "It's not just about making things pretty. It's about structuring information so it survives the future. Semantic HTML vs. Div Soup.",
-      "content": "<h1>The Document Object Model (DOM)</h1><p>Everything you see on the web is a tree. A giant family tree of parents and children.</p><h2>Semantic HTML</h2><p>Writing <code>&lt;div class=\"bold\"&gt;Title&lt;/div&gt;</code> is visual. Writing <code>&lt;h1&gt;Title&lt;/h1&gt;</code> is semantic.</p><ul><li><strong>Accessibility</strong>: Screen readers need semantics to navigate.</li><li><strong>SEO</strong>: Robots need semantics to understand importance.</li><li><strong>Future Proofing</strong>: CSS changes every year (Tables -> Floats -> Flexbox -> Grid). Semantic HTML remains valid for decades.</li></ul><h2>CSS Variables (Custom Properties)</h2><p>Stop hardcoding <code>#333</code>. Use <code>--ink-primary</code>.</p><p>This is not just for themes; it's for <em>meaning</em>. When you define <code>--space-unit: 8px</code>, you are creating a system (physics) for your world, rather than just painting pixels.</p>",
+      "title": "Code as DNA",
+      "excerpt": "Software is self-replicating verbal machinery. Building systems that evolve rather than decay.",
+      "content": "<h1>The Genetic Code of Systems</h1><p>Legacy code is genetic mutations that have accumulated errors. Good code is evolutionarily stable.</p><h2>Semantic HTML as Skeleton</h2><p>Just as a skeleton supports muscle, semantic structure supports data. Without it, the organism collapses under its own weight.</p><h2>Refactoring as Autophagy</h2><p>Cells clean out waste through autophagy. Codebases must do the same. deletes lines of code is a health marker. Bloat is cancer.</p>",
       "tags": [
         "Tech",
-        "Web Standards"
+        "Evolutionary Code"
       ],
       "author": "Maya Lin",
       "readTime": "30 min read"
     },
     {
       "id": 7,
-      "title": "Rights of the Independent",
-      "excerpt": "The 'ABC Test' and what it means for you. Are you a freelancer or an exploited employee in disguise?",
-      "content": "<h1>The Employee vs. Contractor Boundary</h1><p>Corporations love contractors efficiently because they don't pay payroll tax, health insurance, or unemployment. But often, they treat them like employees.</p><h2>The ABC Test (California & Others)</h2><p>To be a valid contractor, you must meet ALL three:</p><ul><li><strong>A</strong>: You are free from the control/direction of the hirer.</li><li><strong>B</strong>: You perform work that is <em>outside</em> the usual course of the hiring entity's business.</li><li><strong>C</strong>: You are independently established in that trade.</li></ul><h2>The Trap</h2><p>If a design firm hires a freelance designer to do design work (Failing B), that freelancer is legally an employee.</p><blockquote><strong>Know your status.</strong> If they control your hours, your tools, and your process, you are an employee. Demand the benefits.</blockquote>",
+      "title": "Rights of the Organism",
+      "excerpt": "Misclassification is a violation of boundaries. Defining your autonomy in a parasitic gig economy.",
+      "content": "<h1>The Membrane of Independence</h1><p>The ABC Test is essentially checking for a distinct cellular wall. Are you a separate organism, or just an organelle of the corporation?</p><h2>Defining Boundaries</h2><ul><li><strong>Autonomy (A)</strong>: You control your own metabolic rate (schedule).</li><li><strong>Differentiation (B)</strong>: You perform a function the host cannot do itself.</li><li><strong>Integrity (C)</strong>: You can survive if detached from the host.</li></ul><p><strong>Defense</strong>: Strengthen your membrane. Incorporate. Diversify your food sources (clients). Do not become parasitic; become symbiotic.</p>",
       "tags": [
         "Legal",
-        "Labor Rights"
+        "Labor Rights",
+        "Bio-Politics"
       ],
       "author": "Jordan Rivera",
       "readTime": "15 min read"
@@ -266,12 +269,12 @@
   "sparkFeed": [
     {
       "id": 101,
-      "author": "Maya Lin",
-      "avatar": "ML",
-      "content": "Just reflashed the field nodes to the Meshtastic 2.0 firmware. Range test confirmed at 14km with the new yagi directional antennas.",
+      "author": "Sarah Kim",
+      "avatar": "SK",
+      "content": "Team HRV scores are up 15% this week after implementing the new 'Deep Work' cycle. Biological resonance is the ultimate productivity metric.",
       "tags": [
-        "LoRa",
-        "Signal Processing"
+        "Bio-Data",
+        "Team Health"
       ],
       "time": "2 hours ago"
     },
@@ -279,10 +282,10 @@
       "id": 102,
       "author": "Elena Rodriguez",
       "avatar": "ER",
-      "content": "Warning: New prompt injection vector found in the latest open-weight model release. It bypasses the safety alignment via recursive token padding. Patching our local instances now.",
+      "content": "Detected a new mimetic virus in the algorithm. The 'Fear-Loop' is designed to spike cortisol. Enabling cognitive filters now.",
       "tags": [
-        "AI Security",
-        "Red Team"
+        "Cognitive Defense",
+        "AI Hygiene"
       ],
       "time": "5 hours ago"
     },
@@ -290,9 +293,9 @@
       "id": 103,
       "author": "David Chen",
       "avatar": "DC",
-      "content": "The latency on the Jetson Nano for swarm coordination is down to 12ms. We are officially faster than human reaction time.",
+      "content": "The latency on the swarm is down to 12ms. We are moving like a single organism now in the simulation.",
       "tags": [
-        "Robotics",
+        "Swarm Tech",
         "Latency"
       ],
       "time": "1 day ago"
