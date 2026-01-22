@@ -116,25 +116,25 @@
   "resources": [
     {
       "id": 1,
-      "title": "Legal Immunotherapy",
-      "excerpt": "Boosting your organizational immune system against parasitic liability clauses. A guide to defensive contract hygiene.",
-      "content": "<h1>The Corporate Immune System</h1><p>A contract is not just a document; it is an immune response. It defines what passes through your membrane (value, clients) and what gets rejected (liability, scope creep).</p><h2>Identifying Parasitic Clauses</h2><p>Just as a virus hijacks cell machinery, bad clauses hijack your business logic.</p><ul><li><strong>Indemnification</strong>: The 'cytokine storm' of legal risks. If you indemnify for third-party IP, you are accepting a fatal viral load.</li><li><strong>Exclusivity</strong>: A metabolic restrictor. It starves your organism of necessary nutrients (other clients).</li></ul><h2>Protocol for Defense</h2><p>Treat negotiation as <strong>immunotherapy</strong>. You are introducing small doses of resistance (redlines) to strengthen the relationship. A healthy partner respects a strong immune system.</p>",
+      "title": "Strategic Contract Defense",
+      "excerpt": "Protecting your organization from liability risks. A guide to defensive contract hygiene and negotiation.",
+      "content": "<h1>The Contract as Control System</h1><p>A contract is a control system for business relationships. It defines input parameters (scope), output expectations (deliverables), and error handling (disputes).</p><h2>Identifying Risk Vectors</h2><p>Risk often hides in standard boilerplates.</p><ul><li><strong>Indemnification</strong>: The highest risk vector. If you indemnify for third-party IP, you accept unlimited liability.</li><li><strong>Exclusivity</strong>: Limits your market access. It restricts your ability to scale by binding you to a single revenue source.</li></ul><h2>Protocol for Defense</h2><p>Treat negotiation as <strong>risk mitigation</strong>. Introducing precise redlines strengthens the validity of the agreement and signals professionalism. A serious partner respects due diligence.</p>",
       "tags": [
-        "Legal Engineering",
-        "Bio-Defense",
-        "Sovereignty"
+        "Legal Strategy",
+        "Risk Management",
+        "Negotiation"
       ],
       "author": "Jordan Rivera",
       "readTime": "12 min read"
     },
     {
       "id": 2,
-      "title": "Kinetic Profitability",
-      "excerpt": "Reducing operational friction to zero. Using autonomous logistics to create a frictionless flow of value.",
-      "content": "<h1>Friction is Entropy</h1><p>In physics, friction creates heat—waste energy. in business, friction creates cost. <strong>Kinetic Profitability</strong> is the state of zero-resistance value transfer.</p><h2>The Swarm Advantage</h2><p>Traditional logistics are linear and brittle. Swarm logistics are fluid and adaptive.</p><ul><li><strong>Redundancy</strong>: If one drone fails, the swarm heals the gap.</li><li><strong>Speed</strong>: Real-time routing based on atmospheric data reduces energy cost per joule delivered.</li></ul><h2>Defense as Profit</h2><p>A secure perimeter isn't a cost center; it's a profit multiplier. By automating defense (biometric locks, drone patrols), you remove the 'cortisol tax' of constant vigilance from your human team.</p>",
+      "title": "Autonomous Logistics Optimization",
+      "excerpt": "Reducing operational friction to near-zero. Using autonomous systems to streamline value delivery.",
+      "content": "<h1>Efficiency is ROI</h1><p>In logistics, friction creates cost. <strong>Autonomous Optimization</strong> is the pursuit of zero-latency value transfer.</p><h2>The Swarm Advantage</h2><p>Traditional logistics are linear and rigid. Autonomous swarms are fluid and adaptive.</p><ul><li><strong>Redundancy</strong>: Decentralized units prevent single-point failures.</li><li><strong>Speed</strong>: Real-time routing based on atmospheric data optimizes delivery times.</li></ul><h2>Security as Efficiency</h2><p>A secure perimeter reduces down-time. By automating security (biometric locks, drone patrols), you remove the cognitive load from your human team, allowing them to focus on high-value tasks.</p>",
       "tags": [
-        "Systems Thinking",
-        "Kinetic Defense",
+        "Logistics",
+        "Automation",
         "Efficiency"
       ],
       "author": "David Chen",
@@ -142,37 +142,37 @@
     },
     {
       "id": 3,
-      "title": "Energy Exchange Protocols",
-      "excerpt": "Pricing is not about time; it is about life-force transfer. Aligning economic incentives with biological reality.",
-      "content": "<h1>The ATP of Business</h1><p>Money is just stored energy (ATP). When you undercharge, you are burning your own cellular reserves to fuel someone else's growth. This leads to organizational burnout (cell death).</p><h2>The Input/Output Mismatch</h2><p>Billing by the hour is a leakage of value. You must bill by the <strong>joule of impact</strong>.</p><h3>Anchoring as Signal Strength</h3><p>High prices act as a high-fidelity signal. They filter out noise (bad clients) and attract resonant frequencies (high-value partners). This preserves your bandwidth for deep work.</p>",
+      "title": "Value-Based Pricing Models",
+      "excerpt": "Pricing is not about time; it is about impact. Aligning economic incentives with business outcomes.",
+      "content": "<h1>The Fallacy of Hourly Billing</h1><p>Billing by the hour penalizes efficiency. When you undercharge, you reduce the capital available for R&D and growth.</p><h2>The Output-Oriented Approach</h2><p>Billing must be based on the <strong>Value of Impact</strong>.</p><h3>Anchoring Strategy</h3><p>Higher prices signal higher quality. They filter out low-intent leads and attract partners looking for serious solutions. This preserves your organizational bandwidth for deep work.</p>",
       "tags": [
         "Finance",
-        "Bio-Economics",
-        "Psychology"
+        "Strategy",
+        "Economics"
       ],
       "author": "Jordan Rivera",
       "readTime": "14 min read"
     },
     {
       "id": 4,
-      "title": "Mycelial Economics",
-      "excerpt": "Building anti-fragile alliances. How small businesses can share resources like fungal networks beneath the forest floor.",
-      "content": "<h1>The Wood Wide Web</h1><p>Trees do not compete in a vacuum; they share nutrients via mycelial networks. If one tree is sick, neighbors send carbon. This is the model for the new economy.</p><h2>Node vs. Fortress</h2><p>The 'Fortress Business' tries to own everything vertically. It is strong but brittle. The 'Node Business' owns its core and connects for the rest.</p><ul><li><strong>Shared Intelligence</strong>: Pooling market data across the network.</li><li><strong>Resource Routing</strong>: Passing overflow work to trusted peers instantly.</li></ul><p><strong>Goal</strong>: Create a super-organism that is too distributed to fail.</p>",
+      "title": "Networked Business Associations",
+      "excerpt": "Building resilient alliances. How small businesses can share resources to compete with enterprise incumbents.",
+      "content": "<h1>The Network Effect</h1><p>Businesses do not operate in a vacuum. Shared resources create economies of scale for independent operators.</p><h2>The Federated Model</h2><p>The 'Federated Business' maintains autonomy while leveraging a larger network.</p><ul><li><strong>Shared Intelligence</strong>: Pooling market data across the network for better decision making.</li><li><strong>Resource Routing</strong>: Passing overflow work to trusted partners instantly.</li></ul><p><strong>Goal</strong>: Create a distributed network that is resilient to market shocks.</p>",
       "tags": [
-        "Network Theory",
+        "Networking",
         "Strategy",
-        "Interdependence"
+        "Growth"
       ],
       "author": "Maya Lin",
       "readTime": "12 min read"
     },
     {
       "id": 5,
-      "title": "The Corporate Athlete",
-      "excerpt": "Optimizing human capital through neuro-feedback. Why biometric data is your most critical defensive asset.",
-      "content": "<h1>The Biological Baseline</h1><p>You cannot run a high-performance organization on low-performance biology. Cognitive decline, stress, and burnout are security vulnerabilities.</p><h2>Quantified Sovereignty</h2><p>Owning your biometric data allows you to:</p><ol><li><strong>Detect Stress Vectors</strong>: GSR sensors reveal which clients spike your cortisol. Fire them.</li><li><strong>Optimize Flow</strong>: EEG feedback loops train your team to enter deep work states on command.</li></ol><h2>Health is Defense</h2><p>A vibrant, well-rested team is immune to social engineering and burnout. Your biology is your firewall.</p>",
+      "title": "Performance Optimization",
+      "excerpt": "Optimizing human capital through data. Why health metrics are a critical business asset.",
+      "content": "<h1>The Human Performance Baseline</h1><p>You cannot run a high-performance organization on low-performance fatigue. Cognitive decline and stress are operational risks.</p><h2>Quantified Performance</h2><p>Tracking key metrics allows you to:</p><ol><li><strong>Detect Burnout Risk</strong>: Monitoring workload impact on stress levels.</li><li><strong>Optimize Focus</strong>: Using data to schedule 'Deep Work' sessions during peak cognitive windows.</li></ol><h2>Health is Security</h2><p>A well-rested team is more resilient to errors and social engineering. Your team's cognitive health is a primary asset.</p>",
       "tags": [
-        "Bio-Hacking",
+        "Productivity",
         "Human Capital",
         "Health"
       ],
@@ -181,25 +181,25 @@
     },
     {
       "id": 6,
-      "title": "Code as DNA",
-      "excerpt": "Software is self-replicating verbal machinery. Building systems that evolve rather than decay.",
-      "content": "<h1>The Genetic Code of Systems</h1><p>Legacy code is genetic mutations that have accumulated errors. Good code is evolutionarily stable.</p><h2>Semantic HTML as Skeleton</h2><p>Just as a skeleton supports muscle, semantic structure supports data. Without it, the organism collapses under its own weight.</p><h2>Refactoring as Autophagy</h2><p>Cells clean out waste through autophagy. Codebases must do the same. deletes lines of code is a health marker. Bloat is cancer.</p>",
+      "title": "Code as Infrastructure",
+      "excerpt": "Software is digital infrastructure. Building systems that are maintainable and scalable.",
+      "content": "<h1>The Stability of Systems</h1><p>Legacy code allows errors to accumulate. Good code is stable and scalable.</p><h2>Semantic HTML as Foundation</h2><p>Just as a foundation supports a building, semantic structure supports data. Without it, the application lacks accessibility and SEO value.</p><h2>Refactoring as Maintenance</h2><p>Regular maintenance prevents technical debt. Deleting unused code is a sign of a healthy codebase.</p>",
       "tags": [
         "Tech",
-        "Evolutionary Code"
+        "Best Practices"
       ],
       "author": "Maya Lin",
       "readTime": "30 min read"
     },
     {
       "id": 7,
-      "title": "Rights of the Organism",
-      "excerpt": "Misclassification is a violation of boundaries. Defining your autonomy in a parasitic gig economy.",
-      "content": "<h1>The Membrane of Independence</h1><p>The ABC Test is essentially checking for a distinct cellular wall. Are you a separate organism, or just an organelle of the corporation?</p><h2>Defining Boundaries</h2><ul><li><strong>Autonomy (A)</strong>: You control your own metabolic rate (schedule).</li><li><strong>Differentiation (B)</strong>: You perform a function the host cannot do itself.</li><li><strong>Integrity (C)</strong>: You can survive if detached from the host.</li></ul><p><strong>Defense</strong>: Strengthen your membrane. Incorporate. Diversify your food sources (clients). Do not become parasitic; become symbiotic.</p>",
+      "title": "Independent Contractor Rights",
+      "excerpt": "Misclassification is a legal risk. Defining your autonomy in the gig economy.",
+      "content": "<h1>The Definition of Independence</h1><p>The ABC Test determines if a worker is truly independent. Misclassification leads to penalties.</p><h2>Defining Boundaries</h2><ul><li><strong>Autonomy (A)</strong>: You control your own schedule and methods.</li><li><strong>Differentiation (B)</strong>: You perform work different from the hiring entity's core business.</li><li><strong>Establishment (C)</strong>: You have an independently established trade or business.</li></ul><p><strong>Defense</strong>: Incorporate. Diversify your client base to demonstrate independence.</p>",
       "tags": [
         "Legal",
         "Labor Rights",
-        "Bio-Politics"
+        "Compliance"
       ],
       "author": "Jordan Rivera",
       "readTime": "15 min read"
@@ -209,7 +209,7 @@
     {
       "id": 1,
       "title": "Autonomous Swarm Logistics",
-      "description": "Deployment of AI-driven drone swarms for civic defense, reforestation, and emergency power grid maintenance.",
+      "description": "Deployment of drone swarms for civic defense, reforestation, and emergency power grid maintenance.",
       "tags": [
         "Robotics",
         "Swarm Intelligence",
@@ -217,7 +217,7 @@
       ],
       "proposer": "David Chen",
       "status": "Field Testing",
-      "content": "<h1>Swarm Intelligence: The Civic Shield</h1><p>Our objective is to move beyond single-drone operation to <strong>coordinated swarm tactics</strong>. Using decentralized hive-mind logic, these drones operate without a single point of failure.</p><h2>Capabilities & Data</h2><ul><li><strong>Power Grid Maintenance</strong>: Drones equipped with intense cleaning nozzles remove debris from localized solar arrays and high-voltage lines, increasing efficiency by 14% in field tests.</li><li><strong>Firefighting & Suppression</strong>: Swarms carrying extinguisher grenades can identify thermal runaways and autonomously deploy suppression payloads before human teams arrive.</li><li><strong>Civic Defense</strong>: Real-time perimeter monitoring using LIDAR and thermal imaging, providing a data-rich feed to community dashboards.</li></ul><h2>Technical Specs</h2><p>Each unit runs on a custom <strong>Jetson Nano</strong> cluster, processing 470 million operations per second for real-time obstacle avoidance. The swarm communication protocol uses a localized 5GHz mesh, independent of standard cellular networks, ensuring operation during blackouts.</p>"
+      "content": "<h1>Swarm Intelligence: The Civic Shield</h1><p>Our objective is to move beyond single-drone operation to <strong>coordinated swarm tactics</strong>. Using decentralized logic, these drones operate without a single point of failure.</p><h2>Capabilities & Data</h2><ul><li><strong>Power Grid Maintenance</strong>: Drones equipped with cleaning nozzles remove debris from localized solar arrays and high-voltage lines, increasing efficiency by 14% in field tests.</li><li><strong>Firefighting & Suppression</strong>: Swarms carrying extinguisher charges can identify thermal hotspots and deploy suppression payloads.</li><li><strong>Civic Defense</strong>: Real-time perimeter monitoring using LIDAR and thermal imaging, providing a data-rich feed to community dashboards.</li></ul><h2>Technical Specs</h2><p>Each unit runs on a custom <strong>Jetson Nano</strong> cluster, processing 470 million operations per second for real-time obstacle avoidance. The swarm communication protocol uses a localized 5GHz mesh, independent of standard cellular networks, ensuring operation during blackouts.</p>"
     },
     {
       "id": 2,
@@ -230,7 +230,7 @@
       ],
       "proposer": "Elena Rodriguez",
       "status": "Alpha",
-      "content": "<h1>Simulation as Strategy</h1><p>We are building a <strong>High-Fidelity Reality Engine</strong>. This is not a chatbot; it is a world-modeler. We feed it massive datasets—crop yields, supply chain logistics, weather patterns, and social sentiment—to predict system failures before they happen.</p><h2>The Data Layer</h2><p>The engine consumes 12TB of unstructured data daily. It structures this chaos into <strong>Knowledge Graphs</strong> that map second and third-order consequences of policy decisions.</p><h3>Use Case: Urban Resilience</h3><p>We simulated a Category 4 earthquake event in the Bay Area. The engine successfully predicted 84% of critical infrastructure bottlenecks that city planners missed, specifically regarding water sanitation facilities. We are now optimizing the layout based on these <em>Gnostic</em> insights.</p>"
+      "content": "<h1>Simulation as Strategy</h1><p>We are building a <strong>High-Fidelity Reality Engine</strong>. This is not a chatbot; it is a world-modeler. We feed it massive datasets—crop yields, supply chain logistics, weather patterns, and social sentiment—to predict system failures before they happen.</p><h2>The Data Layer</h2><p>The engine consumes 12TB of unstructured data daily. It structures this data into <strong>Knowledge Graphs</strong> that map second and third-order consequences of policy decisions.</p><h3>Use Case: Urban Resilience</h3><p>We simulated a Category 4 earthquake event in the Bay Area. The engine successfully predicted 84% of critical infrastructure bottlenecks that city planners missed, specifically regarding water sanitation facilities. We are now optimizing the layout based on these insights.</p>"
     },
     {
       "id": 3,
@@ -271,9 +271,9 @@
       "id": 101,
       "author": "Sarah Kim",
       "avatar": "SK",
-      "content": "Team HRV scores are up 15% this week after implementing the new 'Deep Work' cycle. Biological resonance is the ultimate productivity metric.",
+      "content": "Team productivity scores are up 15% this week after implementing the new 'Deep Work' cycle. Focus is the ultimate metric.",
       "tags": [
-        "Bio-Data",
+        "Productivity",
         "Team Health"
       ],
       "time": "2 hours ago"
@@ -282,7 +282,7 @@
       "id": 102,
       "author": "Elena Rodriguez",
       "avatar": "ER",
-      "content": "Detected a new mimetic virus in the algorithm. The 'Fear-Loop' is designed to spike cortisol. Enabling cognitive filters now.",
+      "content": "Detected a new mimetic virus in the algorithm. The 'Fear-Loop' is designed to spike engagement. Enabling cognitive filters now.",
       "tags": [
         "Cognitive Defense",
         "AI Hygiene"
@@ -293,7 +293,7 @@
       "id": 103,
       "author": "David Chen",
       "avatar": "DC",
-      "content": "The latency on the swarm is down to 12ms. We are moving like a single organism now in the simulation.",
+      "content": "The latency on the swarm is down to 12ms. We are moving like a single unit now in the simulation.",
       "tags": [
         "Swarm Tech",
         "Latency"
