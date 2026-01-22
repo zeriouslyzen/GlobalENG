@@ -200,42 +200,42 @@
   "projects": [
     {
       "id": 1,
-      "title": "Community Mesh Network",
-      "description": "Deploying 50 LoRaWAN nodes to create an off-grid communication layer for the Greater Bay Area.",
+      "title": "Autonomous Swarm Logistics",
+      "description": "Deployment of AI-driven drone swarms for civic defense, reforestation, and emergency power grid maintenance.",
       "tags": [
-        "Hardware",
-        "IoT",
-        "Disaster Prep"
+        "Robotics",
+        "Swarm Intelligence",
+        "Defense"
       ],
       "proposer": "David Chen",
-      "status": "Active Funding",
-      "content": "<h1>Project: Bay Area Mesh</h1><h2>Objective</h2><p>Create a resilient, decentralized text-communication network that survives ISP blackouts during earthquakes or fires.</p><h2>The Tech Stack</h2><ul><li><strong>Hardware</strong>: Meshtastic on ESP32 boards.</li><li><strong>Power</strong>: 5V Solar panels + 18650 Battery cells.</li><li><strong>Protocol</strong>: LoRa (Long Range radio) at 915MHz.</li></ul><h2>Current Status</h2><p>We have tested point-to-point links from Oakland Hills to San Francisco (12 miles). We need 50 more nodes to create reliable coverage in the valleys.</p><h2>Needs</h2><ul><li>Electrical Engineers for battery casing design.</li><li>Rust developers for the bridge application.</li></ul>"
+      "status": "Field Testing",
+      "content": "<h1>Swarm Intelligence: The Civic Shield</h1><p>Our objective is to move beyond single-drone operation to <strong>coordinated swarm tactics</strong>. Using decentralized hive-mind logic, these drones operate without a single point of failure.</p><h2>Capabilities & Data</h2><ul><li><strong>Power Grid Maintenance</strong>: Drones equipped with intense cleaning nozzles remove debris from localized solar arrays and high-voltage lines, increasing efficiency by 14% in field tests.</li><li><strong>Firefighting & Suppression</strong>: Swarms carrying extinguisher grenades can identify thermal runaways and autonomously deploy suppression payloads before human teams arrive.</li><li><strong>Civic Defense</strong>: Real-time perimeter monitoring using LIDAR and thermal imaging, providing a data-rich feed to community dashboards.</li></ul><h2>Technical Specs</h2><p>Each unit runs on a custom <strong>Jetson Nano</strong> cluster, processing 470 million operations per second for real-time obstacle avoidance. The swarm communication protocol uses a localized 5GHz mesh, independent of standard cellular networks, ensuring operation during blackouts.</p>"
     },
     {
       "id": 2,
-      "title": "Open Source Agro-Robotics",
-      "description": "Building a $500 CNC farming robot for small urban lots. Weeding, seeding, and watering automation.",
+      "title": "The Gnostic Engine: High-Fi Simulation",
+      "description": "A research-grade AI simulation environment for modeling complex economic and social systems with extreme data richness.",
       "tags": [
-        "Robotics",
-        "AgTech",
-        "Python"
+        "AI Research",
+        "Simulation",
+        "Data Science"
       ],
-      "proposer": "Sarah Kim",
-      "status": "Prototyping",
-      "content": "<h1>Project: GardenBot V1</h1><h2>The Problem</h2><p>Industrial agriculture relies on massive tractors and monocultures. Small scale permaculture is labor intensive. We need a middle path: high-tech, small-scale.</p><h2>The Solution</h2><p>A gantry-style CNC machine that moves over a garden bed. It uses computer vision (OpenCV) to identify weeds and mechanically remove them.</p><h2>Roadmap</h2><ul><li>[x] Gantry mechanical build</li><li>[ ] Stepper motor controller (Arduino)</li><li>[ ] Weed recognition model training</li></ul>"
+      "proposer": "Elena Rodriguez",
+      "status": "Alpha",
+      "content": "<h1>Simulation as Strategy</h1><p>We are building a <strong>High-Fidelity Reality Engine</strong>. This is not a chatbot; it is a world-modeler. We feed it massive datasets—crop yields, supply chain logistics, weather patterns, and social sentiment—to predict system failures before they happen.</p><h2>The Data Layer</h2><p>The engine consumes 12TB of unstructured data daily. It structures this chaos into <strong>Knowledge Graphs</strong> that map second and third-order consequences of policy decisions.</p><h3>Use Case: Urban Resilience</h3><p>We simulated a Category 4 earthquake event in the Bay Area. The engine successfully predicted 84% of critical infrastructure bottlenecks that city planners missed, specifically regarding water sanitation facilities. We are now optimizing the layout based on these <em>Gnostic</em> insights.</p>"
     },
     {
       "id": 3,
-      "title": "Freelance Guild Smart Contracts",
-      "description": "A DAO for creative freelancers to pool insurance funds and dispute resolution.",
+      "title": "Biometric Sovereignty Suite",
+      "description": "Advanced sensors and brainwave interfaces for health monitoring and cognitive enhancement, securely owned by the user.",
       "tags": [
-        "Web3",
-        "Governance",
-        "Legal"
+        "Biometrics",
+        "Neurotech",
+        "Hardware"
       ],
-      "proposer": "Jordan Rivera",
-      "status": "Research",
-      "content": "<h1>Project: The Guild DAO</h1><h2>Concept</h2><p>Freelancers are fragile alone. Together, we can form a mutual aid network.</p><h2>Mechanics</h2><ol><li><strong>Tithing</strong>: Members contribute 2% of income to a treasury.</li><li><strong>Income Smoothing</strong>: If a member has a dry month, they can draw from the pool (repaid later).</li><li><strong>Arbitration</strong>: If a client doesn't pay, the Guild blacklists them and covers legal fees.</li></ol><h2>Tech</h2><p>Built on Gnosis Safe and MolochDAO framework.</p>"
+      "proposer": "Sarah Kim",
+      "status": "Prototyping",
+      "content": "<h1>Own Your Nervous System</h1><p>The next frontier of data is biological. Corporations want your heart rate, your gaze tracking, and your brainwaves to sell you ads. We are building the <strong>Open Source Biometric Shield</strong>.</p><h2>Sensor Array Specs</h2><ul><li><strong>EEG (Brainwaves)</strong>: 8-channel headsets capturing Alpha/Beta/Theta waves for flow-state optimization. Data is encrypted locally.</li><li><strong>GSR (Galvanic Skin Response)</strong>: Real-time stress quantification to identify environmental stressors.</li><li><strong>HRV (Heart Rate Variability)</strong>: Clinical grade monitoring for autonomic nervous system balance.</li></ul><h2>The Application</h2><p>This is not just tracking; it is <em>tuning</em>. By visualizing this data in real-time, users can train their physiological regulation. We provide the hardware and the raw data access—no subscriptions, no clouds, just pure bio-feedback.</p>"
     }
   ],
   "events": [
