@@ -4,16 +4,16 @@
       "id": 1,
       "name": "Maya Lin",
       "initials": "ML",
-      "role": "SvelteKit Specialist for Co-ops",
+      "role": "Decentralized Systems Architect",
       "location": "Oakland, CA",
       "tags": [
-        "Web Engineering",
-        "Co-op Tech",
-        "Open Source"
+        "Rust",
+        "Mesh Networking",
+        "Cryptography"
       ],
       "verified": true,
       "industry": "technology",
-      "bio": "Building democratic digital infrastructure for worker-owned cooperatives. Teaching 'Code purely' workshops.",
+      "bio": "Architecting trustless infrastructure for autonomous communities. Specializing in Rust-based consensus algorithms and off-grid LoRa mesh topologies.",
       "website": "https://example.com/maya",
       "joined": "2025-12-01",
       "vouchedBy": [
@@ -26,15 +26,16 @@
       "id": 2,
       "name": "Jordan Rivera",
       "initials": "JR",
-      "role": "Freelance Contract Strategist",
+      "role": "Computational Law Engineer",
       "location": "Berlin / Remote",
       "tags": [
-        "Legal Engineering",
-        "Freelance Rights"
+        "Smart Contracts",
+        "Zero-Knowledge Proofs",
+        "Solidity"
       ],
       "verified": true,
       "industry": "legal",
-      "bio": "Helping creative independents 'unf*ck' their contracts. Author of the 'Plain Language Service Agreement'.",
+      "bio": "Translating prose law into deterministic code. Building self-executing Service Level Agreements (SLAs) using zk-SNARKs for privacy-preserving verification.",
       "website": "https://example.com/jordan",
       "joined": "2025-11-15",
       "vouchedBy": [
@@ -46,14 +47,15 @@
       "id": 3,
       "name": "Sarah Kim",
       "initials": "SK",
-      "role": "Sustainable Brand Architect",
+      "role": "Bio-Interface Designer",
       "location": "Hudson Valley, NY",
       "tags": [
-        "Branding",
-        "Sustainable Design"
+        "Neurotech",
+        "Haptics",
+        "Bio-Feedback"
       ],
       "industry": "design",
-      "bio": "Crafting visual identities for regenerative agriculture and local food systems.",
+      "bio": "Designing closed-loop neural interfaces. Creating non-invasive haptic feedback systems that expand human sensory perception beyond the standard five.",
       "website": "https://example.com/sarah",
       "joined": "2025-11-20",
       "vouchedBy": [
@@ -65,14 +67,15 @@
       "id": 4,
       "name": "Marcus Thorne",
       "initials": "MT",
-      "role": "Civic Data Scientist",
+      "role": "Civic Intelligence Analyst",
       "location": "Chicago, IL",
       "tags": [
-        "Data Viz",
-        "Civic Tech"
+        "LIDAR",
+        "OpenINT",
+        "Surveillance Defense"
       ],
       "industry": "data",
-      "bio": "Visualizing municipal budgets to empower community organizers. Believes data should be public infrastructure.",
+      "bio": "Deploying civilian-grade LIDAR arrays to map urban changes in real-time. Counter-surveillance expert focusing on adversarial fashion and gait masking.",
       "website": "https://example.com/marcus",
       "joined": "2025-12-05"
     },
@@ -80,14 +83,15 @@
       "id": 5,
       "name": "Elena Rodriguez",
       "initials": "ER",
-      "role": "Ethical AI Researcher",
+      "role": "Adversarial AI Researcher",
       "location": "Barcelona, ES",
       "tags": [
-        "AI Ethics",
-        "Policy"
+        "Model Security",
+        "Cognitive Defense",
+        "Red Teaming"
       ],
       "industry": "research",
-      "bio": "Auditing algorithms for bias. Advocating for 'Slow AI' and human-in-the-loop systems.",
+      "bio": "Studying 'Model Collapse' in recursive training loops. Developing cognitive firewalls to protect human decision-making from algorithmic Nudging.",
       "website": "https://example.com/elena",
       "joined": "2025-11-30"
     },
@@ -95,15 +99,16 @@
       "id": 6,
       "name": "David Chen",
       "initials": "DC",
-      "role": "Hardware Hacker / Repair Tech",
+      "role": "Drone Swarm Engineer",
       "location": "Shenzhen / Seattle",
       "tags": [
-        "Right to Repair",
-        "Hardware"
+        "FPGA",
+        "Kinetic Defense",
+        "Embedded Systems"
       ],
       "verified": true,
       "industry": "hardware",
-      "bio": "Documenting supply chains and teaching people how to fix their own devices. Founder of 'OpenFix'.",
+      "bio": "Programming field-programmable gate arrays (FPGAs) for low-latency drone swarm coordination. Building the 'Civic Shield' autonomous defense grid.",
       "website": "https://example.com/david",
       "joined": "2025-11-10"
     }
@@ -263,31 +268,32 @@
       "id": 101,
       "author": "Maya Lin",
       "avatar": "ML",
-      "content": "Just discovered that you can host a static site on a Raspberry Pi 5 with Cloudflare Tunnel for free. Game changer for local businesses.",
+      "content": "Just reflashed the field nodes to the Meshtastic 2.0 firmware. Range test confirmed at 14km with the new yagi directional antennas.",
       "tags": [
-        "Self-Hosting",
-        "Tips"
+        "LoRa",
+        "Signal Processing"
       ],
       "time": "2 hours ago"
     },
     {
       "id": 102,
-      "author": "Chris Bennett",
-      "avatar": "CB",
-      "content": "The best documentation is the one you actually write. Stop looking for the perfect tool and just use Markdown files.",
+      "author": "Elena Rodriguez",
+      "avatar": "ER",
+      "content": "Warning: New prompt injection vector found in the latest open-weight model release. It bypasses the safety alignment via recursive token padding. Patching our local instances now.",
       "tags": [
-        "PKM",
-        "Writing"
+        "AI Security",
+        "Red Team"
       ],
       "time": "5 hours ago"
     },
     {
       "id": 103,
-      "author": "Elena Martinez",
-      "avatar": "EM",
-      "content": "Is anyone else seeing a shift away from 'User Experience' towards 'User Agency'? I want to build tools that give people power, not just 'delight'.",
+      "author": "David Chen",
+      "avatar": "DC",
+      "content": "The latency on the Jetson Nano for swarm coordination is down to 12ms. We are officially faster than human reaction time.",
       "tags": [
-        "Design Philosophy"
+        "Robotics",
+        "Latency"
       ],
       "time": "1 day ago"
     }
