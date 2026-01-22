@@ -111,9 +111,9 @@
   "resources": [
     {
       "id": 1,
-      "title": "Understanding Contract Language: The API of Human Agreement",
+      "title": "Understanding Contract Language",
       "excerpt": "A plain-language guide to the clauses that corporations use to shift liability. Treat law as code that compiles into reality.",
-      "content": "# Law is Code\n\nWhen we sign a contract, we are executing a script that defines future states of relationship. Just like bad code throws errors, bad contracts create liabilities.\n\n## 1. Indemnification: The 'Catch-All' Exception\n\nThis is the `try...catch` block of legal liability. If you agree to indemnify a client, you are essentially saying: *\"If this code crashes the server (lawsuit happens), I will pay for the damages.\"*\n\n### The Fix\n\nALWAYS limit indemnification to your own *gross negligence* or *willful misconduct*. Never indemnify for third-party claims arising from the client's use of your work.\n\n## 2. IP Assignment: Who Owns the Repo?\n\nMany standard contracts have a \"Work for Hire\" clause that assigns *all* IP created during the term to the client. This is like giving them your entire GitHub account, not just the repo you built for them.\n\n### The Fix\n\nSpecify that \"Background Technology\" (your pre-existing libraries/tools) remains yours, and you grant them a *license* to use it. Only the *specific deliverables* are assigned to them.\n\n## 3. Jurisdiction: The Server Location\n\nIf you live in California but agree to \"Governing Law: New York\", you are agreeing to be sued in a court 3,000 miles away. This is a latency issue that costs thousands in travel and local counsel fees.\n\n**Takeaway**: Read contracts like pull requests. Reject bad diffs.",
+      "content": "<h1>Law is Code</h1><p>When we sign a contract, we are executing a script that defines future states of relationship. Just like bad code throws errors, bad contracts create liabilities.</p><h2>1. Indemnification: The 'Catch-All' Exception</h2><p>This is the <code>try...catch</code> block of legal liability. If you agree to indemnify a client, you are essentially saying: <em>\"If this code crashes the server (lawsuit happens), I will pay for the damages.\"</em></p><h3>The Fix</h3><p>ALWAYS limit indemnification to your own <strong>gross negligence</strong> or <strong>willful misconduct</strong>. Never indemnify for third-party claims arising from the client's use of your work.</p><h2>2. IP Assignment: Who Owns the Repo?</h2><p>Many standard contracts have a \"Work for Hire\" clause that assigns <em>all</em> IP created during the term to the client. This is like giving them your entire GitHub account, not just the repo you built for them.</p><h3>The Fix</h3><p>Specify that \"Background Technology\" (your pre-existing libraries/tools) remains yours, and you grant them a <em>license</em> to use it. Only the <em>specific deliverables</em> are assigned to them.</p><h2>3. Jurisdiction: The Server Location</h2><p>If you live in California but agree to \"Governing Law: New York\", you are agreeing to be sued in a court 3,000 miles away. This is a latency issue that costs thousands in travel and local counsel fees.</p><blockquote><strong>Takeaway</strong>: Read contracts like pull requests. Reject bad diffs.</blockquote>",
       "tags": [
         "Legal Engineering",
         "Freelance",
@@ -124,9 +124,9 @@
     },
     {
       "id": 2,
-      "title": "The Sovereignty Stack: Beyond 'Learning to Code'",
+      "title": "The Sovereignty Stack",
       "excerpt": "Why Full Stack Engineering is about more than JavaScript. It's about owning your digital supply chain from the metal up.",
-      "content": "# The Illusion of Cloud\n\n\"The Cloud\" is just someone else's computer. When you build entirely on Vercel, Firebase, or AWS, you are a digital tenant. You are renting capabilities, not owning them.\n\n## Level 1: The Application Layer (Tenant)\n\nThis is where most bootcamps stop. You know React and CSS. You can build a beautiful frontend, but if the API shuts down, your app is a dead interface.\n\n## Level 2: The Server Layer (Homeowner)\n\nYou run a Linux VPS (Virtual Private Server). You understand Nginx, Docker, and SSH keys. You aren't afraid of the terminal.\n\n*   **Why it matters**: You can host 100 websites for $5/mo. You are not billed per 'serverless function invocation'.\n\n## Level 3: The Data Layer (Sovereign)\n\nYou own your database. You backup your data to a physical drive in your house. You are not datamined.\n\n## The Goal: Digital Permaculture\n\nWe teach engineering not just for jobs, but for *agency*. A Global Citizen Engineer should be able to spin up a communication network for their community if the main internet goes down. That requires understanding systems, not just syntax.",
+      "content": "<h1>The Illusion of Cloud</h1><p>\"The Cloud\" is just someone else's computer. When you build entirely on Vercel, Firebase, or AWS, you are a digital tenant. You are renting capabilities, not owning them.</p><h2>Level 1: The Application Layer (Tenant)</h2><p>This is where most bootcamps stop. You know React and CSS. You can build a beautiful frontend, but if the API shuts down, your app is a dead interface.</p><h2>Level 2: The Server Layer (Homeowner)</h2><p>You run a Linux VPS (Virtual Private Server). You understand Nginx, Docker, and SSH keys. You aren't afraid of the terminal.</p><ul><li><strong>Why it matters</strong>: You can host 100 websites for $5/mo. You are not billed per 'serverless function invocation'.</li></ul><h2>Level 3: The Data Layer (Sovereign)</h2><p>You own your database. You backup your data to a physical drive in your house. You are not datamined.</p><h2>The Goal: Digital Permaculture</h2><p>We teach engineering not just for jobs, but for <em>agency</em>. A Global Citizen Engineer should be able to spin up a communication network for their community if the main internet goes down. That requires understanding systems, not just syntax.</p>",
       "tags": [
         "Systems Thinking",
         "Self-Hosting",
@@ -137,9 +137,9 @@
     },
     {
       "id": 3,
-      "title": "Pricing Your Work: The Psychology of Value",
+      "title": "Pricing Your Work",
       "excerpt": "Stop billing by the hour. Start billing by the value you create. A masterclass in signaling, anchoring, and negotiation.",
-      "content": "# The Hourly Trap\n\nBilling by the hour punishes efficiency. If you get better and faster, you make less money. It creates a perverse incentive to work slowly.\n\n## Value-Based Pricing\n\nInstead of asking \"How long will this take?\", ask \"What is this worth to the client?\". \n\nIf you build an automation script that saves a company $50,000 a year, and it takes you 2 hours to write, should you charge $200 (2 hours x $100)? No. You should charge $5,000 (10% of the value captured). \n\n## The Anchoring Effect\n\nWhen presenting a price, always offer options. \n\n1.  **The Anchor (High)**: \"Full Transformation\" - $15,000\n2.  **The Target (Middle)**: \"Core Solution\" - $8,000\n3.  **The Floor (Low)**: \"Minimal Viable\" - $4,000\n\nMost clients will pick the middle option. Without the high anchor, the middle option feels expensive. With it, it feels like a deal.",
+      "content": "<h1>The Hourly Trap</h1><p>Billing by the hour punishes efficiency. If you get better and faster, you make less money. It creates a perverse incentive to work slowly.</p><h2>Value-Based Pricing</h2><p>Instead of asking \"How long will this take?\", ask \"What is this worth to the client?\".</p><p>If you build an automation script that saves a company $50,000 a year, and it takes you 2 hours to write, should you charge $200 (2 hours x $100)? No. You should charge $5,000 (10% of the value captured).</p><h2>The Anchoring Effect</h2><p>When presenting a price, always offer options.</p><ol><li><strong>The Anchor (High)</strong>: \"Full Transformation\" - $15,000</li><li><strong>The Target (Middle)</strong>: \"Core Solution\" - $8,000</li><li><strong>The Floor (Low)</strong>: \"Minimal Viable\" - $4,000</li></ol><p>Most clients will pick the middle option. Without the high anchor, the middle option feels expensive. With it, it feels like a deal.</p>",
       "tags": [
         "Finance",
         "Strategy",
@@ -150,9 +150,9 @@
     },
     {
       "id": 4,
-      "title": "The Power of Networks: Why Competition is Dead",
+      "title": "The Power of Networks",
       "excerpt": "In a connected economy, your network is your net worth. Moving from zero-sum competition to positive-sum collaboration.",
-      "content": "# Metcalfe's Law for Small Business\n\nMetcalfe's Law states that the value of a network is proportional to the square of the number of connected users. \n\n## The Solopreneur Fallacy\n\nTraditional business thinking is competitive: *\"I need to beat the other guy to get the client.\"* \n\nNetwork thinking is collaborative: *\"If I partner with the other guy, we can bid on a contract that is 10x larger than either of us could handle alone.\"*\n\n## Building Nodes, Not Fortresses\n\nDon't build a business that is a walled garden. Build a node that connects easily with others. \n\n*   **Standardize your inputs/outputs** (Clear pricing, clear deliverables).\n*   **Refer aggressively**: If a job isn't a fit, send it to a peer immediately. The goodwill returns to you with interest (Karma Capital).",
+      "content": "<h1>Metcalfe's Law for Small Business</h1><p>Metcalfe's Law states that the value of a network is proportional to the square of the number of connected users.</p><h2>The Solopreneur Fallacy</h2><p>Traditional business thinking is competitive: <em>\"I need to beat the other guy to get the client.\"</em></p><p>Network thinking is collaborative: <em>\"If I partner with the other guy, we can bid on a contract that is 10x larger than either of us could handle alone.\"</em></p><h2>Building Nodes, Not Fortresses</h2><p>Don't build a business that is a walled garden. Build a node that connects easily with others.</p><ul><li><strong>Standardize your inputs/outputs</strong> (Clear pricing, clear deliverables).</li><li><strong>Refer aggressively</strong>: If a job isn't a fit, send it to a peer immediately. The goodwill returns to you with interest (Karma Capital).</li></ul>",
       "tags": [
         "Business Intel",
         "Strategy"
@@ -162,9 +162,9 @@
     },
     {
       "id": 5,
-      "title": "When to Say No: The Art of Opportunity Cost",
+      "title": "When to Say No",
       "excerpt": "Every 'Yes' to a bad client is a 'No' to a good one. How to identify red flags and protect your most valuable asset: focus.",
-      "content": "# The Hell Yeah or No Heuristic\n\nDerek Sivers said it best: \"If it's not a Hell Yeah, it's a No.\" \n\n## Early Warning Signs (Red Flags)\n\n1.  **The \"Quick\" Request**: \"This should only take five minutes.\" (It never does. It implies they don't value the complexity of your work).\n2.  **The Bargainer**: \"I can pay you in exposure.\" (Exposure doesn't pay rent. This signals they will be high-maintenance).\n3.  **The Chaos Agent**: Emails at 11 PM on Saturday. (They lack boundaries, and will trample yours).\n\n## Scope Creep as Technical Debt\n\nAccepting a bad client is like merging bad code into your `main` branch. It introduces bugs (stress), slows down performance (distraction), and requires massive refactoring (firing them) later. \n\n**Keep your branch clean.**",
+      "content": "<h1>The Hell Yeah or No Heuristic</h1><p>Derek Sivers said it best: \"If it's not a Hell Yeah, it's a No.\"</p><h2>Early Warning Signs (Red Flags)</h2><ol><li><strong>The \"Quick\" Request</strong>: \"This should only take five minutes.\" (It never does. It implies they don't value the complexity of your work).</li><li><strong>The Bargainer</strong>: \"I can pay you in exposure.\" (Exposure doesn't pay rent. This signals they will be high-maintenance).</li><li><strong>The Chaos Agent</strong>: Emails at 11 PM on Saturday. (They lack boundaries, and will trample yours).</li></ol><h2>Scope Creep as Technical Debt</h2><p>Accepting a bad client is like merging bad code into your <code>main</code> branch. It introduces bugs (stress), slows down performance (distraction), and requires massive refactoring (firing them) later.</p><blockquote>Keep your branch clean.</blockquote>",
       "tags": [
         "Operations",
         "Mental Models"
@@ -176,7 +176,7 @@
       "id": 6,
       "title": "HTML & CSS: The Architecture of Information",
       "excerpt": "It's not just about making things pretty. It's about structuring information so it survives the future. Semantic HTML vs. Div Soup.",
-      "content": "# The Document Object Model (DOM)\n\nEverything you see on the web is a tree. A giant family tree of parents and children. \n\n## Semantic HTML\n\nWriting `<div class=\"bold\">Title</div>` is visual. Writing `<h1>Title</h1>` is semantic.\n\n*   **Accessibility**: Screen readers need semantics to navigate.\n*   **SEO**: Robots need semantics to understand importance.\n*   **Future Proofing**: CSS changes every year (Tables -> Floats -> Flexbox -> Grid). Semantic HTML remains valid for decades.\n\n## CSS Variables (Custom Properties)\n\nStop hardcoding `#333`. Use `--ink-primary`. \n\nThis is not just for themes; it's for *meaning*. When you define `--space-unit: 8px`, you are creating a system (physics) for your world, rather than just painting pixels.",
+      "content": "<h1>The Document Object Model (DOM)</h1><p>Everything you see on the web is a tree. A giant family tree of parents and children.</p><h2>Semantic HTML</h2><p>Writing <code>&lt;div class=\"bold\"&gt;Title&lt;/div&gt;</code> is visual. Writing <code>&lt;h1&gt;Title&lt;/h1&gt;</code> is semantic.</p><ul><li><strong>Accessibility</strong>: Screen readers need semantics to navigate.</li><li><strong>SEO</strong>: Robots need semantics to understand importance.</li><li><strong>Future Proofing</strong>: CSS changes every year (Tables -> Floats -> Flexbox -> Grid). Semantic HTML remains valid for decades.</li></ul><h2>CSS Variables (Custom Properties)</h2><p>Stop hardcoding <code>#333</code>. Use <code>--ink-primary</code>.</p><p>This is not just for themes; it's for <em>meaning</em>. When you define <code>--space-unit: 8px</code>, you are creating a system (physics) for your world, rather than just painting pixels.</p>",
       "tags": [
         "Tech",
         "Web Standards"
@@ -186,9 +186,9 @@
     },
     {
       "id": 7,
-      "title": "Rights of the Independent: Misclassification",
+      "title": "Rights of the Independent",
       "excerpt": "The 'ABC Test' and what it means for you. Are you a freelancer or an exploited employee in disguise?",
-      "content": "# The Employee vs. Contractor Boundary\n\nCorporations love contractors efficiently because they don't pay payroll tax, health insurance, or unemployment. But often, they treat them like employees.\n\n## The ABC Test (California & Others)\n\nTo be a valid contractor, you must meet ALL three:\n\n*   **A**: You are free from the control/direction of the hirer.\n*   **B**: You perform work that is *outside* the usual course of the hiring entity's business.\n*   **C**: You are independently established in that trade.\n\n## The Trap\n\nIf a design firm hires a freelance designer to do design work (Failing B), that freelancer is legally an employee. \n\n**Know your status.** If they control your hours, your tools, and your process, you are an employee. Demand the benefits.",
+      "content": "<h1>The Employee vs. Contractor Boundary</h1><p>Corporations love contractors efficiently because they don't pay payroll tax, health insurance, or unemployment. But often, they treat them like employees.</p><h2>The ABC Test (California & Others)</h2><p>To be a valid contractor, you must meet ALL three:</p><ul><li><strong>A</strong>: You are free from the control/direction of the hirer.</li><li><strong>B</strong>: You perform work that is <em>outside</em> the usual course of the hiring entity's business.</li><li><strong>C</strong>: You are independently established in that trade.</li></ul><h2>The Trap</h2><p>If a design firm hires a freelance designer to do design work (Failing B), that freelancer is legally an employee.</p><blockquote><strong>Know your status.</strong> If they control your hours, your tools, and your process, you are an employee. Demand the benefits.</blockquote>",
       "tags": [
         "Legal",
         "Labor Rights"
@@ -209,7 +209,7 @@
       ],
       "proposer": "David Chen",
       "status": "Active Funding",
-      "content": "# Project: Bay Area Mesh\n\n## Objective\nCreate a resilient, decentralized text-communication network that survives ISP blackouts during earthquakes or fires.\n\n## The Tech Stack\n- **Hardware**: Meshtastic on ESP32 boards.\n- **Power**: 5V Solar panels + 18650 Battery cells.\n- **Protocol**: LoRa (Long Range radio) at 915MHz.\n\n## Current Status\nWe have tested point-to-point links from Oakland Hills to San Francisco (12 miles). We need 50 more nodes to create reliable coverage in the valleys.\n\n## Needs\n- Electrical Engineers for battery casing design.\n- Rust developers for the bridge application."
+      "content": "<h1>Project: Bay Area Mesh</h1><h2>Objective</h2><p>Create a resilient, decentralized text-communication network that survives ISP blackouts during earthquakes or fires.</p><h2>The Tech Stack</h2><ul><li><strong>Hardware</strong>: Meshtastic on ESP32 boards.</li><li><strong>Power</strong>: 5V Solar panels + 18650 Battery cells.</li><li><strong>Protocol</strong>: LoRa (Long Range radio) at 915MHz.</li></ul><h2>Current Status</h2><p>We have tested point-to-point links from Oakland Hills to San Francisco (12 miles). We need 50 more nodes to create reliable coverage in the valleys.</p><h2>Needs</h2><ul><li>Electrical Engineers for battery casing design.</li><li>Rust developers for the bridge application.</li></ul>"
     },
     {
       "id": 2,
@@ -222,7 +222,7 @@
       ],
       "proposer": "Sarah Kim",
       "status": "Prototyping",
-      "content": "# Project: GardenBot V1\n\n## The Problem\nIndustrial agriculture relies on massive tractors and monocultures. Small scale permaculture is labor intensive. We need a middle path: high-tech, small-scale.\n\n## The Solution\nA gantry-style CNC machine that moves over a garden bed. It uses computer vision (OpenCV) to identify weeds and mechanically remove them.\n\n## Roadmap\n- [x] Gantry mechanical build\n- [ ] Stepper motor controller (Arduino)\n- [ ] Weed recognition model training"
+      "content": "<h1>Project: GardenBot V1</h1><h2>The Problem</h2><p>Industrial agriculture relies on massive tractors and monocultures. Small scale permaculture is labor intensive. We need a middle path: high-tech, small-scale.</p><h2>The Solution</h2><p>A gantry-style CNC machine that moves over a garden bed. It uses computer vision (OpenCV) to identify weeds and mechanically remove them.</p><h2>Roadmap</h2><ul><li>[x] Gantry mechanical build</li><li>[ ] Stepper motor controller (Arduino)</li><li>[ ] Weed recognition model training</li></ul>"
     },
     {
       "id": 3,
@@ -235,7 +235,7 @@
       ],
       "proposer": "Jordan Rivera",
       "status": "Research",
-      "content": "# Project: The Guild DAO\n\n## Concept\nFreelancers are fragile alone. Together, we can form a mutual aid network.\n\n## Mechanics\n1. **Tithing**: Members contribute 2% of income to a treasury.\n2. **Income Smoothing**: If a member has a dry month, they can draw from the pool (repaid later).\n3. **Arbitration**: If a client doesn't pay, the Guild blacklists them and covers legal fees.\n\n## Tech\nBuilt on Gnosis Safe and MolochDAO framework."
+      "content": "<h1>Project: The Guild DAO</h1><h2>Concept</h2><p>Freelancers are fragile alone. Together, we can form a mutual aid network.</p><h2>Mechanics</h2><ol><li><strong>Tithing</strong>: Members contribute 2% of income to a treasury.</li><li><strong>Income Smoothing</strong>: If a member has a dry month, they can draw from the pool (repaid later).</li><li><strong>Arbitration</strong>: If a client doesn't pay, the Guild blacklists them and covers legal fees.</li></ol><h2>Tech</h2><p>Built on Gnosis Safe and MolochDAO framework.</p>"
     }
   ],
   "events": [
@@ -246,7 +246,7 @@
       "location": "The Omni Commons, Oakland",
       "host": "David Chen",
       "type": "Workshop",
-      "content": "Bring your broken electronics! We will be repairing toasters, laptops, and vintage audio gear. Learn how to use a multimeter and soldering iron."
+      "content": "<p>Bring your broken electronics! We will be repairing toasters, laptops, and vintage audio gear. Learn how to use a multimeter and soldering iron.</p>"
     },
     {
       "id": 2,
@@ -255,7 +255,7 @@
       "location": "Virtual (Zoom)",
       "host": "Maya Lin",
       "type": "Discussion",
-      "content": "A roundtable discussion on how technology can scale the cooperative model. Guests from Mondragon Corporation and Rochdale Capital."
+      "content": "<p>A roundtable discussion on how technology can scale the cooperative model. Guests from Mondragon Corporation and Rochdale Capital.</p>"
     }
   ],
   "sparkFeed": [

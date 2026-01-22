@@ -671,14 +671,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.createElement('div');
     modal.className = 'modal-backdrop';
 
-    // Parse markdown-ish content (simple paragraph split)
-    const formattedContent = content.split('\n\n').map(p => {
-      if (p.startsWith('### ')) return `<h3>${p.replace('### ', '')}</h3>`;
-      if (p.startsWith('## ')) return `<h2>${p.replace('## ', '')}</h2>`;
-      if (p.startsWith('# ')) return `<h1>${p.replace('# ', '')}</h1>`;
-      if (p.startsWith('- ')) return `<li>${p.replace('- ', '')}</li>`;
-      return `<p>${p}</p>`;
-    }).join('');
+    // Use content directly (assumes safe HTML from members.json)
+    const formattedContent = content;
 
     const tagsHtml = (tags || []).map(t => `<span class="tag">${t}</span>`).join('');
 
